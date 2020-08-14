@@ -1,0 +1,58 @@
+@media screen and (min-width: 768px) and (max-width: 1024px){ 
+    .container.image-part1 .box1 {
+        margin-bottom: 40px;
+        padding: 25px;
+    }
+}
+
+@media screen and (max-width: 767px){
+    .container.image-part1 .box1 {
+        clip-path: none;
+        padding: 15px;
+    }
+
+    .container.image-part1 .box1 button {
+        margin-right: auto;
+    }
+
+    .container.image-part2 img:first-child {
+        position: static;
+        margin-bottom: 15px;
+    }
+
+    .container.image-part2 img:last-child {
+        position: static;
+        display: none;
+    } 
+
+    /* --------------- image part ------------------------ */
+    .container.image-part3 {
+       padding: 0;    
+    }
+
+    .container.image-part3 img {
+        margin-bottom: 15px;
+    }
+    .container.image-part3 .box3 p {
+        padding: 0;
+    }
+
+    .container.image-part3 .box3 button {
+        margin: 0 auto;
+    }
+
+    .container.image-part4 .mob-f-order {
+        order: 2;
+    }
+
+
+    /* testimonial */
+    .section-testimonial .path1,
+    .section-testimonial .path2,
+    .section-testimonial .path3,
+    .section-testimonial .path4 {
+        display: none;
+    }
+} 
+
+

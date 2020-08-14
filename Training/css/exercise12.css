@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+body{
+    margin:0;
+    padding:0;   
+}
+
+.section-header .logo .site-title {
+    font-family: Roboto,sans-serif;
+}
+
+.section-header .navigation .nav-item .nav-link {
+    font-family: Roboto,sans-serif;
+}
+.section-header .navigation .nav-item.active .nav-link {
+    color: red;
+}
+
+.section-slider .card {
+    /* height: 500px; */
+}
+
+.mycontainer {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+
+}
+
+.child {
+    background: red;
+    margin: 10px;
+    justify-self: flex-end;
+    flex-basis: 48%;
+
+    height: 200px;
+}

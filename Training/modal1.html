@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>modal1</title>
+</head>
+<style>
+    *{
+        box-sizing: border-box;
+    }
+    .btn{
+        padding: 15px;
+    border: none;
+    background: #ab8787;
+    color:white;
+    border-radius: 1px solid;
+    border-radius: 10px;
+    cursor: pointer;
+    transition :all 0.4s ease;
+    box-shadow: 0 0 5px 2px black;
+    outline:0;
+    }
+    .modal{
+        margin: 0 auto;
+    height: 450px;
+    width: 550px;
+    background: blanchedalmond;
+    transition: all 0.4s ease;
+    border: none;
+    border-radius: 2px;
+    box-shadow: 0 0 12px 1px black;
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+}
+.modal.show{
+    visibility: visible;
+    opacity: 1;
+    transform: none;
+    transition: all 0.3s ease;
+}
+.modal-header{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: sans-serif;
+    font-size:20px;
+    padding:2px 10px;
+    border-bottom: 1px solid black;
+
+}
+.modal-header .btn-close{
+    height:30px;
+    width:35px;
+    cursor: pointer;
+    border:none;
+    position:relative;
+    background:transparent;
+    outline:0;
+    
+}
+.modal-header .btn-close span{
+    height:1px;
+    width: 30px;
+    position:absolute;
+    background:black;
+    display:inline-block;
+    left:0;
+}
+.modal-header .btn-close span:first-child{
+    transform:rotate(45deg);
+}
+    .modal-header .btn-close span{
+        transform:rotate(-45deg);
+    }
+</style>
+<body>
+    <button class="btn"> show modal </button>
+    <div class="modal">
+        <div class="modal-header"> 
+            <h2 class="modal-title">Modal Title </h2>
+            <button class="btn-close"> 
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Est omnis earum vitae fuga ipsum veritatis laborum in dicta, repellat consectetur, aliquam harum. Numquam accusamus fuga temporibus, nobis repellat illum? Fugiat.</p>
+
+        <button> Read More </button>
+        
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script>
+        $(".btn").click(function(){
+            $(".modal").addClass("show");
+        });
+        $(".btn-close").click(function(){
+            $(".modal").removeClass("show");
+        });
+    </script>
+</body>
+</html>

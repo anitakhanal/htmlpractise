@@ -1,0 +1,58 @@
+.select-menu {
+    position: relative;
+    display: inline-block;
+    font-family: Poppins,sans-serif;
+    font-size: 14px;
+
+    &-input {
+        background: rgb(255, 255, 255);
+        display: flex;
+        align-items: center;
+        padding: 10px 15px;
+        box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.26);
+        cursor: pointer;
+        transition: all 0.4s ease;
+        
+        &:hover {
+            background-color: #f7f7f7;
+        }
+
+        .placeholder {
+            min-width: 106px;
+        }
+
+        .display-value {
+            display: none;
+            min-width: 106px;
+        }
+
+    }
+
+    &-options {
+        position: absolute;
+        background-color: white;
+        width: 100%;
+        box-shadow: 0 3px 3px rgba(0, 0, 0, .26);
+        display: none;
+    }
+
+    &-option {
+        padding: 5px 15px;
+        cursor: pointer;
+        min-height: 31px;
+        transition: all 0.4s ease;
+
+        &:hover {
+            background-color: #f7f7f7;
+        }
+    }
+
+} 
+
+
+
+
+i.fa {
+    margin-left: 10px;
+}
+

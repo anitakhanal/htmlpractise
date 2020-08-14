@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Color Meter</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <style>
+        .cm-wrapper {
+            display: flex;
+            font-family: sans-serif;
+        }
+        .cm-wrapper .container {
+            width: 40%;
+            padding: 30px;
+        }
+        .cm-wrapper .container .cm-block {
+            margin-bottom: 25px;
+        }
+        .cm-wrapper .container .cm-block input {
+            margin-right: 10px;
+            
+        }
+        .cm-wrapper .cm-result {
+            border: 1px solid black;
+            width: 300px;
+            height: 300px;
+            background: black;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.1s ease;
+        }
+
+        .cm-wrapper .cm-result div {
+            padding: 10px;
+            font-size: 30px;
+            font-weight: bold;
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cm-wrapper">
+        <div class="container">
+            <div class="cm-block">
+                <input type="range" name="red" id="red" min="0" max="255" step="1" value="0">
+                <label for="red">Red</label>
+            </div>
+            <div class="cm-block">
+                <input type="range" name="green" id="green" min="0" max="255" step="1" value="0">
+                <label for="green">Green</label>
+            </div>
+            <div class="cm-block">
+                <input type="range" name="blue" id="blue" min="0" max="255" step="1" value="0">
+                <label for="blue">Blue</label>
+            </div>
+        </div>
+        <div class="cm-result">
+            <div class="red-value">0</div>
+            <div class="green-value">0</div>
+            <div class="blue-value">0</div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script>
+        let red = 0,
+            green = 0,
+            blue = 0;
+
+        // mixColor();
+
+
+        function mixColor() {
+            $('.cm-result').css('background-color', `rgb(${red} ${green} ${blue})`);
+        }
+
+        $('#red').on('input change', function() {
+            red = $(this).val();
+            $('.red-value').text(red);
+            mixColor();
+        });
+
+        $('#green').on('input change', function(){
+            green = $(this).val();
+            $('.green-value').text(green);
+            mixColor();
+        });
+
+        $('#blue').on('input change', function(){
+            blue = $(this).val();
+            $('.blue-value').text(blue);
+            mixColor();
+        });
+            
+    </script>
+</body>
+
+</html>

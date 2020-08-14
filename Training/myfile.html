@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    button{
+        height:100px;
+        width:200px;
+       }
+</style>
+
+
+
+<body>
+        <!-- <div id ="myDiv"></div>
+        <button onclick="myfunc()">Click</button> -->
+
+        <!-- ....events -->
+        <div id = "demo"> </div>
+<button onmouseover="document.getElementById('demo').innerHTML = Date()">
+    The time is
+    </button>
+
+    <div id ="myDiv"> </div>
+   <button onclick ="sayThanks()"> say Thanks </button>
+
+   <input onkeyup="alert('keyreleased')">
+   <input onkeydown="alert('key pressed')">
+   <input type ="text" onkeydown=" myfunction1()" onkeyup="myfunction2()"  >
+   Enter your name :<input type = "text" id = "myinput" >
+   <p> my name is <span id ="myname"> </span></p>
+  
+
+    <!--          MOUSEE EVENTS.... -->
+
+    <!-- onClick
+    ONMOUSEOVER    ONCONTEXTMENU
+    ONMOUSEMOVE
+    ONMOUSEOUT
+    ONMOUSEDOWN
+    ONMOUSEUP -->
+
+    <!-- .................... keyboard events........... -->
+    <!-- onkeyup -->
+    <!-- onkeydown -->
+
+    <script>
+
+        // console.log("hello world");
+        // document.write("hello world");
+        // window.alert("hello world");
+        // var age=18;
+        // function myfunc(){
+        //     var x=10;
+        //     var y=20;
+        //     console.log(`the result =${x +y }`);
+        //     document.getElementById("myDiv").innerHTML = `the result =${x +y }`;
+            
+        //     if(age<18){
+        //         console.log("age is below 18");
+
+        //     }
+        //     else{
+        //         console.log("age is above or equal to 18");
+        //     }
+            
+        // }
+        // console.log(typeof true);
+        // age<18 ? console.log ("age is below 18"): console.log("age is above or equal to 18");
+        // if(num == 18 || num == 19)
+        // {
+        //  console.log
+        // }
+
+    //    let x = true;
+    //    console.log(typeof x, x);
+    //    x =String(x);
+    //    console.log(typeof x, x);
+
+
+    //    let z = 'anita';
+    //    console.log(typeof z, z);
+    //    z = String(z);
+    //    console.log(typeof z,z)
+
+    //    let firststr ="5";
+    //    let laststr="7";
+    //    console.log(firststr + laststr);
+
+    //    let firststrstr="anifa";
+    //    let first ="khanal";
+    //    console.log(firststr - laststr);
+
+    //    let str ="123";
+    //    console.log(str);
+    //    str = Number(str);
+    //    console.log(typeof str);
+
+    //    let age = Number("This is string");
+    //    console.log(age);
+
+    //    console.log(Number ("  123  "));
+    //    console.log(Number("123z"));
+    //    console.log(Number(true));
+    //    console.log(Number(false));
+    //    console.log(Number(undefined));
+    //    console.log(Number(null));
+
+    //    console.log(""+ 1+ 0);
+    //    console.log("" - 1 +0);
+    //    console.log(true + false);
+    //    console.log(6/"3");
+    //    console.log("2" + "3");
+    //    console.log(4 +5 +"px");
+    //    console.log("$"+4+5);
+    //    console.log("4" - 2);
+    //    console.log(7/0);
+    //    console.log(null +1);
+    //    console.log(undefined + 1);
+
+       // operators 
+       // 1. unary
+        let m = 1;
+        m = -m;
+        console.log(m);
+
+        // string concatenation , binary +
+        //  let s ="my" + "string";
+        //  alert(s);
+        //  alert('1' +2);
+        //  alert( 2 + '1');
+        //  alert(2 + 2+'4');
+        //  alert('6'/'2');
+
+        //  Numeric conversion , unary+ 
+        //  alert(-true);
+        //  alert(+false);
+        //  alert(+"");
+        //  let apples ="2";
+        //  let oranges ="3";
+        //  alert(apples  + oranges);
+        //  alert(+apples + +oranges);
+
+        // Assignment
+        // let a = 2 * 2 +1;
+        // alert(a);
+
+        // chaining assignment
+
+        // let a ,b,c;
+        // a = b= c= 2;
+        // alert(a);
+        // alert(b);
+        // alert(c);
+
+        // let a =1, b=2;
+        // let c=3-(a = b+1);
+        // alert(a);
+        // alert(c);
+
+    //   Remainder
+    // alert(5% 2);
+    // alert(8 % 3);
+       
+    //    exponentiation ** (power)
+    // alert(2 ** 2);
+    // alert(5 **2);
+    // alert(4**(1/2));
+    // alert(8**(1/3));
+
+    // incement/decrement
+
+    // let counter =2;
+    // counter++ = 2; 
+    // alert(counter);
+
+    // let counter =2;
+    // // counter--;
+    // counter = counter -2;
+    // alert(counter);
+
+    // let counter =1;
+    // let a = ++counter;
+    // alert(a);
+
+    // let counter =1;
+    // let a = counter ++;
+    // alert(a);
+    // alert(counter);
+
+    // comparisons
+// a > b, a<b, a<=b , a>=b a!=b , a==b, a===b
+
+// string comparison
+// alert("z" > "a");
+// alert("glow" > "gluee");
+
+
+// interaction :
+// let message ="what's up ? ";
+// alert(message);
+
+// prompt:
+
+// let name = prompt (" enter your name ");
+// console.log(" your age is " + name);
+
+// confirm():
+// let isBoss = confirm(" are you a boss");
+// console.log(isBoss);
+
+// if statement:
+// let year = prompt(" In which year was ECMAscript-2015 spec published");
+// if (year == 2015){
+//     alert("That's correct !");
+//     alert(" your're so smart");
+// }
+            //     if (1){
+            //      console.log("true");
+            //     }
+            //  else{
+            //      console.log("false");
+            //     }
+
+//  let cond =(year == 2015);
+//  if(cond){
+//      console.log("That's correct");
+//  }
+//  else{
+//      console.log(" How can yo be so wrong !");
+//  }
+
+        //    if (year < 2015){
+        //        console.log("too early...");
+
+        //    } else if(year == 2015)
+        //    {
+        //      console.log("you guessed is right");
+        //    }
+        //    else{
+        //        console.log("how can you be so wrong! ")
+        //    }
+           
+        //    ternary operator '?'
+        //  let result = condition ? value1: value 2
+        // let ages = 18;
+        // let canVote = ages>=18? 'can vote' : 'cannot vote';
+        // console.log(canVote);
+
+    //  logical operator 
+    // &&(and) ||(or) !(not)
+        //    let result = a|| b;
+        //    let hour = 11;
+        //    if (hour>18 || hour<10){
+        //        alert("office is closed");
+        //    } else {
+        //        alert("office is open");
+        //    }
+
+            //  let currentuser = null;
+            //  let defaultuser = "john";
+            //  let name = currentuser || defaultuser || "unnamed";
+            //  console.log(name);
+    // //  AND
+    //    let hour = 50;
+    //    let minute = 30;
+    //    if (hour == 10 && minute ==30)
+    //    {
+    //        console.log("it's 10:30");
+    //    } else{
+    //        console.log("its me anita");
+    //    }
+    //     alert(1 && null && 2);
+    //     alert(null || 2 && 3||4 );
+    
+    // //  check the range
+    // //  write if condn that checks age is betn 18 and 90
+    // //   let agess= 99;
+    // //  if ( agess >= 18 && agess <= 90 )
+    // //  {
+    // //      console.log("you are young");
+    // //  } else{
+    // //      console.log('you are not young');
+    // //  }
+
+    //          let agesss=11;
+    //          if(agesss < 18 || agesss > 90 )
+    //          {
+    //              console.log("your are smart enough");
+
+    //          } else {
+    //              console.log("your are not smart enough");
+    //          }
+
+
+    // let userName =prompt("enter your username");
+    // if (userName == "Admin"){
+    //     let password = prompt("enter your password");
+    //     if(password =="admin")
+    //     {
+    //         alert("welcome");
+    //     } else{
+    //         alert("wrong password");
+    //     }
+    // } 
+    // else if(userName == "anita" || userName == null){
+    //     alert(" I dont know you");
+    // } else {
+    //     alert("operation canclled");
+    // }
+     
+     // while/do-while loop
+
+//      // while loop
+//      let i = 0;
+//      while(i<3)
+// {
+//     alert(i);
+//     i++;
+// }
+  // do-while 
+//    let i = 0;
+//    do{
+//        alert(i);
+//     i++;
+//    } while(i<3)
+
+   // for loop 
+    // for(let i = 0; i < 10; i++){
+    //     console.log(i);
+    // }
+
+    // let start = "#";
+    // for(let i =0; i<7 ; i++)
+    // {
+    //     console.log(start);
+    //     start =  start + "#";
+    // }
+
+    // FIZZBUZZ
+    // for (let i = 1; i<= 100 ; i++)
+    // {   
+    //     if(i % 3 == 0 && i % 5 == 0) {
+    //         console.log('FizzBuzz');
+    //     }
+    //     else if (i % 3 == 0)
+    //     {
+    //         console.log("FIZZ");
+    //     }
+    //     else if ( i % 5 == 0)
+    //     {
+    //         console.log("buzz");
+    //     }
+    //     else {
+    //         console.log(i);
+    //     }
+
+    // }
+    // switch
+    // switch(condition){
+    //     case 'case':
+    //     break;
+    //     default:
+    //     break;
+
+    // }
+
+
+    // switch(prompt(" what is the weather like?"))
+    // {
+    //     case"rainy":
+    //     console.log("remember to bring umberella");
+    //     break;
+
+    //     case"sunny":
+    //     console.log("dress lightly");
+    //     break;
+    //     case"cloudy":
+    //     console.log("go outside");
+    //     break;
+
+    //     default:
+    //     console.log("unknown weather");
+    //     break;
+
+    // }
+
+    // FUNCTION
+    //  function myFunction(){
+    //      console.log("hello function ");
+    //  }
+    //  myFunction();
+              
+
+            //   function Square(x){
+            //     console.log(x * x);
+            //   }
+              
+            //   Square(8);
+       
+    //  const power = function(base ,exponent){
+    //      let result =1;
+    //      for(let count = 0; count< exponent; count++)
+    //      {
+    //          result *= base;
+    //      }
+    //      return result;
+    //  }
+    //  console.log(power(2 , 10));
+
+                        // scopes   local variables
+
+                        // function showMessage(){
+                        //     let message ="my message";
+                        //     console.log(message);
+
+                        // }
+                        // showMessage();
+                        // console.log(message);
+
+                        // GLOBAL VARIABLE
+
+        //                 let userName = "anifa";
+        //                 function showmessage(){
+                            
+                            
+        //                     userName = "ciya";
+        //                     let message ="welcome" + userName;
+        //                     console.log(message);
+
+        //                 }
+        //                 console.log(userName);
+        //                 showmessage();
+        //                 console.log(userName);
+        
+        // let name ="sharmila";
+        // if(name == "sharmila"){
+        //    let name ="anita";
+        //     let message = "welcome" + name;
+        //     console.log(message);
+        // }
+        // console.log(name);
+        // console.log(message);
+
+        // function sum(a ,b)
+        // {
+        //     return a + b;
+        // }
+        // let result = sum (10 , 20);
+        // console.log(result);
+                
+                //   function checkAge(age){
+                //   if(age> 18){
+                //       return true;
+
+                //   } else{
+                //       return confirm (" do you have permision from your parents ?");
+                //   }
+                //   }
+                //    let age = prompt("how old are you?",18);
+                //    if (checkAge(age)){
+                //        alert("access granted");
+
+                //    }   else{
+                //        alert("acess denied");
+                //    }      
+
+                // function sayHi(){
+                //     alert("Hi there");
+                // }
+                // console.log(sayHi);
+
+                // function sayHi(){
+                //     alert ("Hi there");
+                // }
+                // let fun = sayHi;
+                // fun();
+                // sayHi();
+
+                // function factorial(n){
+                //     if(n == 0){
+                //         return 1;
+
+                //     } else{
+                //         return n * factorial(n-1);
+                //     }
+                // }
+                // console.log(factorial(10));
+
+                // .............array..............
+                // let fruit=["apple", "orange","mango"];
+                // console.log(fruit[2]);
+
+                // let myArr=[];
+                // let str ="my string";
+                // console.log(str[str.length -1]);
+
+                // let str ="my string";
+                // for(let i =0; i<str.length;i++){
+                //  console.log(str[i]);
+                // }
+// .......... reverse...................
+                // let str = "anita";
+                // let reverseStr ="";
+                // for(let i=0; i<str.length ; i++){
+                //     reverseStr = str[i]+ reverseStr;
+                // }
+                // console.log(reverseStr);
+
+// .......palindrome................
+                // let str = "12321";
+                // let reverseStr ="";
+                // for(let i=0; i<str.length ; i++){
+                //     reverseStr = str[i]+ reverseStr;
+                // }
+                //  if(str == reverseStr)
+                //  {
+                //      console.log("palindrome");
+                //  }else{
+                //      console.log("not a palindrome");
+                //  }
+
+// ..............stack...................
+// let myArr =["kathmandu" ,"butwal" , "pokhara"]
+// myArr.push("murgiya");
+// console.log(myArr);
+// myArr.pop();
+// console.log(myArr);
+
+        // ........................shift/unshift...............
+        // myArr.unshift("murgiya");
+        // console.log(myArr);
+        // myArr.shift("");
+        // console.log(myArr);
+
+        // for(let location of myArr){
+        //     console.log(location);
+
+        // }
+        // for(let key in myArr){
+        //     console.log(myArr[key]);
+        // }
+
+        // .............. multidimensional.................
+          
+        //   let multiArr =[
+        //       [ 1,2,3], [4 ,5 ,6] , [7 ,8, 9]
+        //   ];
+        // //   multiArr[0]
+        //   console.log(multiArr[1][1]);
+
+        // ...........................Arrray methods................
+            //   .toString()
+
+    //    let Arr = ["one" ,"two", "three", "four"];
+    //    console.log(Arr.toString());
+
+    //    .join()
+     
+    //   console.log(Arr.join("*"));
+
+    // .splice()
+    // Arr.splice(2,3, "five" , "six", "seven")
+    // Arr.splice(1,2,'six', 'gi');
+    // console.log(Arr);
+
+//     let Arr = [" sharmila", "anita", "shirjana"];
+//    Arr.splice(1 , 2, "sundar" , "shila");
+//    console.log(Arr);
+
+// let firstGroup = ["sharmila", "anita", "srijana"];
+// let secondGroup = ["sundar" , "shila"];
+// let newGroup = firstGroup.concat(secondGroup);
+// // console.log(newGroup);
+
+// let thirdGroup =["ram", "shyam", "hari"];
+// newGroup = firstGroup.concat(secondGroup , thirdGroup);
+// console.log(newGroup);
+
+// // .slice
+//   let myArr = ["orange" , "lemon", "kiwi"];
+//   let newArr = myArr.slice(1);
+//   console.log(newArr);
+
+// ...................sort ....................
+// let fruits=["banana" , "papaya" , "kiwi" , "orange"];
+// fruits.sort();
+// console.log(fruits);
+
+// let points=[40 , 100, 1, 5, 25, 10];
+// points.sort();
+// console.log(points);
+
+// points.sort(function (a ,b){
+//     return a-b;
+
+// });
+// console.log(points);
+
+//  points[0] = 100;
+//  points[points.length-1]=100;
+//  console.log(points[points.length-1]);
+
+// ...............string method..............
+//  .length
+// let myStr="abcdefghijklmnopqrstuvwxyz";
+// console.log(myStr.length);
+
+    /// indexof()
+    // let findstring ="where is my string located my";
+    // console.log(findstring.indexOf("my" ,10));
+
+        //   .lastindexOf
+    // console.log(findstring.lastIndexOf("my")); // 27
+    // console.log(findstring.lastIndexOf("Nepal")); //-1
+    // console.log(findstring.lastIndexOf("my" ,15)); // 
+
+    // let str= "search for a string";
+    // console.log(str.search("string"));
+    // console.log(str.indexOf("string"));
+
+    // ......slice(start,end)
+    //  console.log(str.slice(7 ,9));
+    //  console.log(str.slice(7));
+    //  console.log(str.slice(-12 ,-6));
+
+//     //  ....substring()............
+//     let str="banana, apple, kiwi";
+//     console.log(str.substring(7 ,13));
+
+//     // ......substr()...........
+//     console.log(str.substr(7,6));
+//     console.log(str.substr(7));
+//     console.log(str.substr(5,9));
+
+//     // ......replace()...........
+//      str="please visit America";
+//      let newstr=str.replace("America", "Nepal");
+//      console.log(newstr);
+    
+//     str ="America is great country.please visit America";
+//     newstr=str.replace("America", "Nepal");
+//     console.log(newstr);
+//     newstr= str.replace(/America/g, "Nepal"); // regural expression/global match
+//     console.log(newstr);
+
+//     // ......to uppercase()
+//     let myName="sirjana";
+//     console.log(myName.toUpperCase());
+
+//     // ........tolowercaew()..........
+//     let capLetter =" NEPAL";
+//     console.log(capLetter.toLowerCase());
+
+//     //   .....concat()...........
+//     let fullname ="sundar" + " " +"Bastakoti";
+//     let firstname ="sundar";
+//     let lastname ="Bastakoti";
+//     fullname=firstname.concat(" ", lastname);
+//     console.log(fullname);
+
+
+//     // ..trim()...........
+//     str="              Hello Anita              ";
+//     // console.log(str.trim());
+
+//     // ....charAt(position)
+//     // str="Hello world";
+//     // console.log(str.charAt(0));
+
+//     // .......charCodeAt(position)
+//     // console.log(str.charCodeAt(0));
+// // (this method returns utf-16 code . ranging betn 0 to 65535)
+// // ..............string property acess....
+//  str ="hello";
+// console.log(str[0]);
+// for (let ch of str){
+// console.log(ch);
+// }
+
+// // .............converting a string to an array..................
+// let mystring =" a, b ,c ,d ,e";
+// console.log(mystring.split(","));   
+
+// name = "Anita";
+// console.log(name.split(""));
+
+//  fullname ="shila aryal"
+//  nameArr = fullname.split(" ");
+//  firstname = nameArr[0];
+//  lastname = nameArr[1];
+//   console.log(firstname , lastname);
+
+// //   ...........join............
+// nameArr =["sundar", "Bastakoti"];
+// console.log(nameArr.join(" "));
+
+// // ...................number methods...........
+//     // isNaN()  (is Not a number)
+
+//     console.log(isNaN("string"));
+//     console.log(isNaN(400));
+
+//     // ...........math.random()...................
+//     console.log(Math.random());
+//     // Generates pseudorandom number between 0 and 1
+
+//     // Math.PI
+//     console.log(Math.PI);
+
+//     // ..........math.sqrt()...........
+//     console.log(Math.sqrt(16))
+
+//     // ......Math.max()
+
+//     console.log(Math.max(10 ,15 ,5, 13 ,30));
+
+//     // ........math.min()
+//     console.log(Math.min(5 , 8 , 2 , 10, 20));
+//     // .................Math.pow()......MDN mozila developer network
+
+//     console.log(Math.pow(4,2));
+
+//     // /............. Math.floor().....
+//     console.log(Math.floor(40.22));
+
+//     // ....math.abs()..........
+//     console.log(Math.abs(-40));
+
+//     // .............Math.ceil().........
+//     console.log(Math.ceil(40.22));
+
+//     // Math.round()
+//     console.log(Math.round(40.51));
+    
+// //  ......math.sin(90)..........
+// console.log(Math.sin(90));
+// console.log(Math.cos(45));
+// console.log(Math.tan(60));
+
+// // ..........   .tostring()
+// let x= 123
+// console.log(x.toString());
+
+//     //  ...............        .tofixed()
+//       x = 9.656;
+//       console.log(x.toFixed(0));
+//       console.log(x.toFixed(2));
+//       console.log(x.toFixed(4));
+
+//     // .................  parselnt()
+//     console.log(parseInt("10"));
+//     console.log(parseInt("10.33"));
+//     console.log(parseInt("10 year"));
+
+// // ............ parseFloat()
+// console.log(parseFloat("10"));
+// console.log(parseFloat("10.33"));
+// console.log(parseFloat("10 20 30"));
+// console.log(parseFloat("years 10"));
+
+// // .........MAX_VALUE
+// x = Number.MAX_VALUE;
+// console.log(x);
+
+// // ............. MIN_VALUE
+// y =Number.MIN_VALUE
+// console.log(y);
+
+// // .....................objects and object methods...................
+// let car ={
+//     price: "2000000",
+//     model : "fiat",
+//     company_name:"Hundai",
+//     color: "White",
+//     weight: "750kg",
+
+// };
+// console.log(car);
+// console.log(typeof car)
+// console.log(car.model);
+
+// car.color="black";
+// console.log(car.color);
+
+// let person ={
+//     first_name:"sharmila",
+//     last_name:"parajuli",
+//     class: "5th sem",
+//     gender:"female",
+//     fullname:function(){
+//         return this.first_name + " " + this.last_name;
+//     }
+// }
+
+// console.log(person.first_name);
+// console.log(person.fullname());
+// console.log(person['class'])
+
+// let user ={
+//     name :"john",
+//     age :30,
+//     "likes Bird" : true
+// }
+// console.log(user["likes Bird"]);
+
+// user["likes Bird"] =false;
+// console.log(user["likes Bird"]);
+// user.name ="anita";
+// user["lastname"] = "khanal";
+// console.log(user);
+// user.address="murgiya";
+// console.log(user.address);
+
+// delete user.name;
+// console.log(user);
+
+// key = prompt("what do you want to know about the user");
+// console.log(user[key]);
+
+// function makeuser(name,age){
+//     return{
+//         name:name,
+//         age: age,
+//     }
+// }
+// user =makeuser("john", 30);
+// console.log(user);
+
+
+// let laptop={
+//             model:"inspiron",
+//             size:"14.4inch",
+//             battery:"6 cell",
+//             hdd:"500GB",
+//             RAM:"4GB",
+//             getSpec:function(){
+//                 return laptop.model+" "+ 
+//                 laptop.size+" "+
+//                 laptop.hdd+" "+
+//                 laptop.RAM;
+//             }
+//         };
+//         console.log(laptop.getSpec());
+
+//          user={
+//             id:101,
+//             email:"johnaryal@gmail.com",
+//             presonalInfo:{
+//                 name:"John",
+//                 address:{
+//                     line1:"Golpark-3",
+//                     city:"Butwal",
+//                     state:"5",
+//                 }
+//             }
+//         };
+//         console.log(user.profession);
+//         let profession = user && user.profession ? user.profession: "teacher";
+
+//         console.log(profession);
+//         console.log(user.email);
+//         console.log(user.presonalInfo.name);
+//         console.log(user.presonalInfo.address.city); 
+       
+//        user = { name :"john", age : 30 }
+//        console.log("age" in user);
+//        console.log("blabla" in user);
+
+//        obj = {
+//            test:undefined
+//        }
+//        console.log(obj.test);
+//        console.log("test" in obj);
+
+//     //     for ...in loop
+
+//     user ={
+//         name:"suraj",
+//         age: 23,
+//         isAdmin:true
+
+//     };
+
+//     for(let key in user){
+//         console.log(key);
+//         console.log(user[key]);
+//     }
+
+//     //  copying by Reference
+
+//     message ="hello";
+//     phrase = message;
+//     message= "world";
+//     console.log(phrase);
+//     console.log(message);
+
+// user = { name: "Anita" , class:"5th sem"}
+//  admin = user;
+// admin.name = "srijana";
+// console.log(user.name);
+
+// a = {};
+// b = a;
+// console.log(a==b);
+// console.log(a === b);
+
+// a = {};
+// b = {};
+// console.log(a == b);
+
+// const obj={
+//     name : "ram"
+// };
+
+// obj.age =30;
+// console.log(obj);
+
+//  obj = {
+//     name :"sita"
+// }
+
+// const PI = Math.PI;
+// PI = 3.14;
+// PI = PI + 30;
+
+// const car = { name:"Fiat", model:"500", color:"white"};
+// // car ="volvo";
+// car.name="volvo";
+// console.log(car);
+
+// const cars =["volvo" , "lamborgini", "fiat"];
+// cars[0] =   "maruti";
+// console.log(cars);
+// cars =["toyota"];
+
+//  let user = {
+//     name :"john",
+//     age :30,
+// };
+
+// let clone ={};
+// for(let key in user){
+//     clone[key] = user[key];
+   
+// }
+// console.log(clone);
+// clone.name ="ram";
+// console.log(clone.name);
+
+// .......... Events..............
+function sayThanks(){
+    alert("Thankyou");
+}
+
+function myfunction1(){
+    console.log("key down");
+
+}
+function myfunction2(){
+    console.log("key up");
+}
+
+// function printName(){
+myinput.onkeyup = function(){
+  let input = document.getElementById("myinput").value;
+  document.getElementById("myname").innerHTML =input;
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+
+</html>

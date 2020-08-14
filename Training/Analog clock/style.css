@@ -1,0 +1,41 @@
+* {
+    box-sizing: border-box;
+
+}
+html, body{
+    margin: 0;
+    height: 100%;
+    display:flex;
+    align-items: center;
+    justify-content:center;
+}
+.container{
+    display:flex;
+    align-items: center;
+    justify-content:center;
+    height:100%;
+}
+.clock{
+    background:url("img/clock_face.jpg");
+    height:400px;
+    width:400px;
+    position:relative;
+}
+
+.clock::before {
+    content:'';
+    width:25px;
+    height:25px;
+    background:black;
+    border-radius: 50%;
+    position: absolute;
+    left:50%;
+    top:50%;
+    transform:translateX(-50%) translateY(-50%);
+    z-index: 9;
+}
+.clock .hand{
+    position: absolute;
+    top:0;
+    left:0;
+}

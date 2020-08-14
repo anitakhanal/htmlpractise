@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> about ajax</title>
+</head>
+<style>
+    
+    /* .user-container
+    {
+        position: absolute;
+        left:50%;
+        transform: translateX(-50%);
+
+    } */
+    
+    .card{
+    width: 400px;
+    margin: 10px 0px;
+    padding: 10px 20px;
+    box-shadow: 0px 0px 1px 1px #00000017;
+    display: inline-block;
+    }
+    .form-group{
+        margin-bottom: 15px;
+    }
+    label{
+        margin-bottom: 5px;
+    display: block;
+    font-size: 20px;
+    }
+    input{
+        padding:10px;
+        width:100%;
+        border:none;
+        background-color:#f1f1f1;
+    }
+    .add-user{
+        padding: 10px 20px;
+    border: 2px solid #0000ff38;
+    border-radius: 24px;
+    background-color: #9292d494;
+    box-shadow: aqua;
+    box-shadow: 0px 0px 4px 1px black;
+    }
+</style>
+<body>
+        <div class="card-wrapper">  </div>
+        <div class="user-container">
+            <div class="row">
+                <div class="col-6">
+                    <div class="card">
+                        <form class="userform">
+                            <div class="form-group">
+                                <label class=""> First Name</label>
+                                <input type="text" name="first_name" id="first_name" placeholder="enter your first name">
+
+                            </div>
+                            <div class="form-group">
+                                <label class=""> Last Name</label>
+                                <input type="text" name="last_name" id="last_name" placeholder="enter your last name">
+                                 
+                            </div>
+                            <div class="form-group">
+                                <label class=""> First Name</label>
+                                <input type="text" name="email" id="email" placeholder="enter your mail">
+                                 
+                            </div>
+                            <div class="form-group">
+                                <label class=""> profile picture</label>
+                                <input type="url" name="avatar" id=""placeholder="enter image link">
+                            </div>
+                            <button class="add-user"> Add User</button>
+                        </form>
+                    </div>
+
+                </div>
+                  <div class="col-6">
+                      <div class="users"></div>
+
+                      
+                  </div>
+            </div>
+        </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script>
+    function loadDoc(){
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function(){
+            if(this.readyState == 4 && this.status ==200){
+                let response = JSON.parse(this.responseText);
+                    let users = response.data;
+                
+            }
+
+        }
+
+    }
+</script>
+</html>

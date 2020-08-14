@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Modal</title>
+
+    <style>
+        body {
+            margin: 0;
+            background: #f7f7f7;
+        }
+        .btn-modal {
+            background: #673AB7;
+            padding: 10px 15px;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            box-shadow: 0 13px 21px rgba(103, 58, 183, 0.40);
+            cursor: pointer;
+            outline: 0;
+            transition: all 0.3s ease;
+            will-change: box-shadow;
+            margin: 15px;
+        }
+
+        .btn-modal:active {
+            box-shadow: none;
+        }
+
+        .backdrop {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background-color: rgba(0, 0, 0, 0.452);
+            display: none;
+            transition: all 0.4s ease;
+        }
+        .backdrop.show {
+            display: block;
+        }
+
+
+        .modal {
+            width: 800px;
+            min-height: 400px;
+            background: #ffffff;
+            border-radius: 4px;
+            margin: 0 auto;
+            transform: translateY(-50%);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.40);
+            visibility: hidden;
+            opacity: 0;
+            transition: all 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
+        }
+
+        .modal.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+            transition: all 0.8s ease;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 15px;
+            align-items: center;
+            border-bottom: 1px solid #f1f1f1;
+        }
+
+        .modal-header .modal-title {
+            margin: 0;
+            font-family: sans-serif;
+            font-size: 18px;
+        }
+        
+        .modal-header .btn-close{
+            position: relative;
+            width: 33px;
+            height: 40px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            outline: 0;
+        }
+        .modal-header .btn-close span{
+            width: 30px;
+            height: 1px;
+            background: black;
+            display: inline-block;
+            position: absolute;
+            left: 0;
+            
+        }
+
+        .modal-header .btn-close span:first-child {
+            transform: rotate(45deg);
+        }
+        .modal-header .btn-close span:last-child {
+            transform: rotate(-45deg);
+        }
+
+
+        .modal-body {}
+    </style>
+</head>
+
+<body>
+    <div class="backdrop"></div>
+    <button class="btn-modal">Open Modal</button>
+    <div class="modal">
+        <div class="modal-header">
+            <h2 class="modal-title">Modal title</h2>
+            <button class="btn-close">
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        <div class="modal-body"></div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.btn-modal').click(function(){
+                $('.backdrop').addClass('show');
+                $('.modal').addClass('show');
+            });
+
+            $('.btn-close').click(function(){
+                $('.backdrop').removeClass('show');
+                $('.modal').removeClass('show');
+            });
+            $('.backdrop').click(function(){
+                $('.backdrop').removeClass('show');
+                $('.modal').removeClass('show');
+            });
+        })
+    </script>
+</body>
+
+</html>

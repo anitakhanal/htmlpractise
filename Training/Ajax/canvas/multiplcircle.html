@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Multiple circle</title>
+</head>
+
+<body>
+    <canvas height="600" width="1200"> </canvas>
+    <script>
+        let canvas = document.querySelector('canvas');
+        let width = canvas.width;
+        let height = canvas.height;
+        let ctx = canvas.getContext('2d');
+
+        let circles = [];
+        let colors = ['red', 'green', 'blue', 'violet', 'pink', 'tomato', 'yellow', 'skyblue', 'grey', 'brown', 'black', 'purple', 'orange', 'cyan', 'crimson'];
+
+        for (let i = 0; i < colors.length; i++)
+        {
+            let x = Math.floor(Math.random() * 300);
+            let y = Math.floor(Math.random() * 300);
+            let r = 10;
+            let dx = Math.floor(Math.random() * 4 + 5);
+            let dy = Math.floor(Math.random() * 6 + 4);
+            let myCircle = new Circle(x, y, r, dx, dy, colors[i]);
+            circles.push(myCircle);
+        }
+
+        function animate() {
+            requestAnimationFrame(animate);
+
+            ctx.clearRect(0, 0, width, height);
+            for (let circle of circles) {
+                circle.update();
+            }
+        }
+        animate();
+
+        function Circle(x, y, r, dx, dy, color) {
+            this.x = x;
+            this.y = y;
+            this.r = r;
+            this.dx = dx;
+            this.dy = dy;
+            this.color = color;
+
+            this.draw = function () {
+
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.r, 0, 2 * Math.PI);
+                ctx.fillStyle = this.color;
+                ctx.fill();
+            }
+
+            this.update = function () {
+
+                if (this.x + this.r > width || this.x + this.r < 0) {
+                    this.dx = -this.dx;
+                }
+
+                if (this.y + this.r > height || this.y + this.r < 0) {
+                    this.dy = -this.dy;
+                }
+                this.x += this.dx;
+                this.y += this.dy;
+                this.draw();
+            }
+        }
+
+
+// class Circle {
+//     constructor(x, y, r, dx, dy, color) {
+//         this.x = 120;
+//         this.y = 140;
+//         this.dx = 4;
+//     }
+
+//     draw() {
+//         this.x
+//     }
+// }
+
+// let circle1 = new Circle(120, 140, 5, 4, 6, 'red');
+// let circle2 = new Circle();  
+
+// circle1.draw();
+// circle2.draw();
+
+    </script>
+
+</body>
+
+</html>

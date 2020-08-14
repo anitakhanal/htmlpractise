@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CALCILATOR</title>
+</head>
+<style>
+.calculator-title{
+        background-image: url();
+        text-align:center;
+        font-family: sans-serif;
+        font-weight:600;
+    }
+table{
+    /* width:100%; */
+    text-align:center;
+    cursor:pointer;
+    align-items: center;
+}
+.calculator-wrapper{
+   margin: 0 auto;
+   background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfzwTR06yvUbtLyXU28Nb46y0XqIvAKBsVxpL6TKdQBA3lwCWq);
+   object-fit: cover;
+   background-repeat: no-repeat;
+   width:100px;
+   height:100px;
+}
+table td{
+width:25%;
+align-items:center;
+}
+button{
+    width:100%;
+    cursor:pointer;
+    background-color:white;
+    border:none;
+    height:25px;
+}
+ </style>
+<body>
+    <div class="calculator-title">  CALCULATOR </div>
+   <div class="calculator-wrapper">
+    <table border="1">
+        <tr>
+            <td colspan="4" id="result">100 </td>
+        </tr>
+         <tr> 
+             <td colspan="2"> <button id="ac"> AC </button></td>
+             <td> <button id="del"> Del </button></td>
+             <td> <button id ="/"> / </button></td>
+         </tr>
+         <tr> 
+      
+                <td> <button id="one"> 1 </button> </td>
+                <td> <button id="two"> 2 </button> </td>
+                <td> <button id="three"> 3 </button> </td>
+                <td> <button id="multiply"> * </button> </td>
+        </tr>
+        <tr>
+                <td> <button id="four"> 4 </button> </td>
+                <td> <button id="five"> 5 </button> </td>
+                <td> <button id="six"> 6 </button> </td>
+                <td> <button id="plus"> + </button> </td>
+        </tr>
+        <tr>
+                <td> <button id="seven"> 7 </button> </td>
+                <td> <button id="eight"> 8 </button> </td>
+                <td> <button id="nine"> 9 </button> </td>
+                <td> <button id="minus"> - </button> </td>
+        </tr>
+        <tr>
+                <td> <button id="decimal"> . </button> </td>
+                <td> <button id="zero"> 0 </button> </td>
+                <td colspan="2"> <button id="equal"> = </button> </td>
+        </tr>
+         </tr>
+    </table>
+
+    
+
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script>
+        let del = $('#del'),
+        ac =$('#ac'),
+        result = $('#result')
+        let resultString= "";
+        ac.click(function(){
+            result.text(0);
+            resultString="";
+        });
+
+        del.click(function(){
+            resultString = resultString(0,resultString.length-1);
+            result.text(resultString.length>0?resultString:0);
+        });
+        $('#one,#two,#three,#four,#five,#six,#seven,#eight,#nine,#zero').click(function(){
+            resultString +=$(this).text().trim();
+            result.text()
+        })
+    </script>
+</body>
+</html>

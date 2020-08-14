@@ -1,0 +1,92 @@
+@media screen and (max-width:500px){
+    .header-wrapper{
+        width:100%;
+    }
+    .navbar-light .navbar-toggler-icon{
+        background-color:white;
+    }
+    .header-part h2 {
+        font-size:66px;
+    }
+    .header-part span{
+        font-size:37px;
+    }
+    .about-section .image img{
+     width:100%;
+    }
+    .about-section .image .image-part img{
+        display:none;
+    
+    }
+    .seaction-head{
+        margin-left:0;
+        text-align:center;
+    }
+    .seaction-head .section-info .title-font {
+        left:32%;
+    }
+    .tab-content .service-block{
+        flex-wrap:wrap;
+    }
+    .intiguity .seaction-head-wrapper{
+        padding:10px;
+    }
+    .intiguity .seaction-head-wrapper .title-font{
+        left:26%;
+        top:47%;
+    }
+    .team-wrapper .seaction-head-wrapper .title-small{
+        padding:12px;
+    }
+    .team-wrapper .seaction-head-wrapper .title-big {
+        font-size:42px;
+    }
+    .team-wrapper .seaction-head-wrapper .title-font{
+        left: 50%;
+        transform: translateX(-50%);
+        top:61px;
+    }
+    .big-asset.asset-2{
+        display:none;
+    }
+    .big-asset.asset-4{
+        display:none
+    }
+    .section-portfolio .section-head-wrapper .title-font{
+        left:37%;
+    }
+    .image-grid{
+        grid-template-columns: auto;
+    }
+    .testomonial-wrapper .section-head-wrapper .title-big{
+        font-size:60px;
+    }
+    .testomonial-wrapper .section-head-wrapper .title-font{
+        font-size: 18px;
+        top: 54px;
+    }
+    .clients-wrapper .section-head-wrapper .title-big{
+        font-size:50px;
+    }
+    .clients-wrapper .section-head-wrapper .title-font {
+        font-size:19px;
+    }
+    .clients{
+        flex-wrap:wrap;
+    }
+    .contact-section .section-head-wrapper .title-font{
+        top: 17px;
+        font-size: 41px;
+    }
+    .contact-box {
+        position:static;
+    }
+    .footer-nav-title{
+        text-align:center;
+    }
+    .footer-nav .footer-nav-list{
+        display: flex;
+        justify-content: center;
+    }
+
+}

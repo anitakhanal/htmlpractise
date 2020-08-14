@@ -1,0 +1,348 @@
+.header {
+  padding: 20px 0;
+}
+
+.header .banner {
+  margin-left: auto;
+  height: 90px;
+  background: #ccc;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+}
+
+@media (min-width: 1200px) {
+  .header .banner {
+    width: 720px;
+  }
+}
+
+.header .navbar {
+  background: #008271;
+}
+
+.header .search {
+  margin-left: auto;
+}
+
+.footer {
+  margin-top: 30px;
+}
+
+.footer ul {
+  list-style: none;
+  font-family: poppins,sans-serif;
+  font-size: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.footer ul li {
+  padding: 20px;
+}
+
+.footer p {
+  margin-top: 25px;
+}
+
+.about {
+  margin-top: 50px;
+  position: relative;
+}
+
+.about .news {
+  font-size: 30px;
+}
+
+.about h5 {
+  font-size: 10px;
+}
+
+.about p {
+  font-size: 10px;
+}
+
+.about .steel-img {
+  bottom: 20px;
+  max-width: 100%;
+  margin-top: 80px;
+}
+
+.about .csr {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.about .csr .csr-item {
+  position: relative;
+  -ms-flex-preferred-size: 49%;
+      flex-basis: 49%;
+}
+
+.about .csr .csr-item .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: linear-gradient(0, #3F51B5, blue);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.about .ovwrlay h2 {
+  color: white;
+  font-size: 15px;
+  margin-bottom: 15px;
+}
+
+.product .image {
+  position: relative;
+}
+
+.product .image ul {
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  list-style-type: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.product .image li {
+  height: 20px;
+  width: 20px;
+  background-color: white;
+  margin: 10px;
+}
+
+.product .image .active {
+  background-color: red;
+  border: 3px solid white;
+}
+
+.product .contact-wrapper {
+  background-color: rgba(128, 128, 128, 0.459);
+  min-height: 200px;
+  border-radius: 24px;
+}
+
+.product .contact h1 {
+  text-align: center;
+  font-family: poppins,sans-serif;
+  font-size: 1.5rem;
+  padding: 10px;
+  font-weight: bold;
+}
+
+.product .connect {
+  margin-left: 10px;
+  padding: 5px;
+}
+
+.product .connect i {
+  margin-right: 10px;
+  background-color: #ececec;
+  padding: 3px 2px;
+  width: 30px;
+  text-align: center;
+  border-radius: 20px;
+}
+
+.product .img_map {
+  height: 160px;
+  width: 64%;
+  position: absolute;
+  left: 74px;
+  top: 158px;
+  overflow: hidden;
+  border-radius: 24px;
+}
+
+.welcome-wrapper {
+  position: relative;
+  background-color: white;
+  padding: 109px 15px;
+  -webkit-box-shadow: 15px 0 0 13px #ebdddd14;
+          box-shadow: 15px 0 0 13px #ebdddd14;
+  margin: 40px 0;
+  border-radius: 0 50% 50% 0;
+  z-index: 1;
+}
+
+.welcome h1 {
+  font-family: poppins ,sans-serif;
+  font-weight: bold;
+  position: absolute;
+  top: 30px;
+}
+
+.welcome p {
+  font-family: poppins ,sans-serif;
+  font-weight: bold;
+  position: absolute;
+  top: 90px;
+}
+
+.read-more {
+  background-color: #008271;
+  border-radius: 24px;
+  border: 2px solid #008271;
+  padding: 10px;
+  color: white;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.image-wrapper {
+  margin-top: 80px;
+  position: relative;
+  width: 80vh;
+}
+
+.image1 img {
+  height: 50vh;
+  position: absolute;
+  left: -100px;
+}
+
+.play {
+  background-color: #008271;
+  position: absolute;
+  top: 40%;
+  left: 52%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-radius: 50%;
+  padding: 10px;
+  text-align: center;
+  width: 100px;
+  height: 100px;
+  z-index: 2;
+}
+
+.products {
+  font-family: poppins ,sans-serif;
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.steel-wrapper {
+  position: relative;
+  width: 100%;
+  display: inline-block;
+  background-image: url("../steel-bar-1.png"), url("../steel-bar - Copy.png");
+}
+
+.images-steel {
+  height: 170px;
+  overflow: hidden;
+  position: relative;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+.images-steel img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.btn2 {
+  background-color: white;
+  border: 2px solid white;
+  border-radius: 24px;
+  padding: 10px;
+  position: absolute;
+  top: 51%;
+  left: 20px;
+}
+
+.images-steel .title {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  background: white;
+  padding: 5px 15px;
+  border-radius: 25px;
+}
+
+.description {
+  position: absolute;
+  bottom: 10px;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  background: rgba(11, 119, 104, 0.8);
+  padding: 10px;
+  overflow: hidden;
+  color: white;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  opacity: 0;
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+}
+
+.description h2 {
+  font-size: 14px;
+}
+
+.description p {
+  font-size: 13px;
+  margin-bottom: 0;
+}
+
+.description button {
+  display: block;
+  margin-left: auto;
+  background: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.images-steel:hover .title {
+  display: none;
+}
+
+.images-steel:hover .description {
+  opacity: 1;
+  display: block;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+/*# sourceMappingURL=style.css.map */

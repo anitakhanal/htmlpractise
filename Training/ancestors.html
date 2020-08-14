@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    div, div * {
+        padding:10px;
+        border:1px solid #ccc;
+        color:black;
+    }
+</style>
+<body>
+    <div class="descendents">
+        <h2>hello </h2>
+        <p> hello paragraph one
+            <span> hello span one </span>
+            <a href=""> link here </a>
+        </p>
+        <p> hello param two 
+            <span> hello span two </span>
+        </p>
+    </div>
+
+    <div> div (parent)
+        <p> paragraph</p>
+        <span> span</span>
+        <h2> h2 </h2>
+        <h3> h3 </h3>
+        <p> paragraph</p>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script>
+        // $(".descendents").children().css("border","1px solid black");
+        // $(".descendents").find("*").css("color","red");
+        // $(".descendents").find("span").css("color","red");
+        // $("p").siblings().css({
+            // 'color':'red',
+        // });
+        $("h2").siblings("p")
+        .css({
+             "color":"red",
+             "border":"1px solid red"
+        
+        });
+    </script>
+</body>
+</html>

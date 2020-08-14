@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> canvas </title>
+</head>
+<body>
+    <canvas width="600" height="400" style="border: 1px solid;"></canvas>
+    <script>
+        let canvas = document.querySelector('canvas');
+        console.log(canvas);
+        let context = canvas.getContext('2d');
+        context.fillStyle = "#ff0000";
+        context.strokeRect(0, 0, 150, 150);
+        context.fillRect(0, 0, 150, 150);   
+        
+        context.moveTo(10, 10);
+        context.lineTo(100,10);
+        context.stroke();
+        
+
+        context.beginPath();
+        context.arc(200, 200, 50, 0, 2 * Math.PI);
+        context.stroke();
+
+        let gradient = context.createLinearGradient(200, 200, 400, 200);
+        gradient.addColorStop(0, 'green');
+        gradient.addColorStop(1, 'red');
+
+        context.fillStyle = gradient;
+        context.fillRect(300,100,200, 200);
+
+        context.font = '20px Arial';
+        context.fillStyle = 'white';
+        context.fillText('Hello Canvas', 100, 100, 400);
+        
+    </script>
+
+</body>
+</html>

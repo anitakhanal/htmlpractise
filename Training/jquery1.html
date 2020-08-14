@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    .box{
+        background-color:skyblue;
+        height:50px;
+        width:80px;
+        display: none;
+    }
+</style>
+
+<body>
+        <p id="mypara"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates repellendus officia error optio consectetur voluptatibus ex molestias magni deleniti? Totam officiis dicta impedit quas expedita quibusdam deserunt iste nesciunt molestiae.</p>
+        <input value="hello buddy">
+
+        <a href="https://www.facebook.com/">Facebook</a>
+
+        <input value ="hey! you">
+       
+
+        <div class="box"> </div>
+        <button class="btn"> show me </button> 
+
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous">
+        </script>
+
+
+<script>
+    let mypara = $("#mypara").text("anita");
+    let myparaHtml = $("#mypara").html("anita khanal");
+    let inputVal = $("input").val("value");
+
+    let facebookLink = $('a').attr('href');
+    let inputval= $("input").val("what");
+    console.log(inputval);
+
+    console.log(mypara, myparaHtml, inputVal);
+    console.log(facebookLink);
+
+    $('a').attr('href', )
+
+
+$(".btn").click(function(){
+    $(".box").slideDown();
+
+    $('.box').animate({'width': '150px'});
+
+
+});
+
+
+// {"":""}, ["",""] , ("", "", "")
+
+</script>
+       
+
+    
+
+    
+</body>
+</html>

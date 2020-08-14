@@ -1,0 +1,102 @@
+.body{
+    background-color:brown;
+    padding: 40px;
+}
+.border-image{
+    background-color:grey;
+    height:150px;
+    width:20%;
+    float:left;
+    border-style:groove; 
+    border-width:25px 25px;
+    /* border-color:grey ghostwhite grey ghostwhite; */
+    /* border-image:linear-gradient(to rigth, #743ad5,#d53a9d); */
+    /* border-image:url(img/border.png) 50% ; */
+    border-image:url(../img/border.png) 20 round;
+    /* border-image-outset:25px; */
+    display:inline-block;
+}
+.box1{ 
+    height:150px;
+    width:20%;
+    border-radius:25px;
+    border-style:solid;
+    border-color:grey burlywood;
+    border-width:25px;
+    background-image:linear-gradient(to left , rgba(255, 0, 0, 0.235), rgba(0, 0, 222, 0.568)) ,url(../img/img1.png);
+    display:inline-block;
+}
+.box3{
+    height:150px;
+    width:20%;
+    background-color:grey;
+    border-style:solid;
+    /* display: none; */
+    visibility:hidden;
+}
+.box4{
+    height:150px;
+    width:20%;
+    border-style:dotted;
+    background-color:blueviolet;
+    display:inline-block;
+}
+.box5{
+    height:150px;
+    width:20%;
+    background-color:royalblue;
+    border-style:groove;
+    display:inline-block;
+    display:none; 
+     /* visibility:hidden; */
+}
+.box6{
+    height:150px;
+    width:20%;
+    border-style:dotted;
+    background-color:royalblue;
+    display:inline-block;
+}
+span{
+    width:200px;
+    height:200px;
+    padding:20px;
+    box-sizing: border-box;
+    line-height: 40px;
+    /* background-color:pink; */
+    clear:both;
+}
+
+
+/* ------------------------------------------------ */
+
+.d-inline-block {
+    width: 200px;
+    height: 200px;
+    background-color: rgb(32, 233, 92);
+    overflow: hidden;
+    margin: 5px;
+    float: right; 
+    
+}
+.clear{
+    clear: both;
+    
+}
+.d-block {
+    height:200px;
+    width:200px;
+    background-color:rgb(238, 104, 9);
+    overflow:hidden;
+      /* float:right; */
+     display:inline-block;
+}
+.list{
+    padding-left:30px;
+}
+.list-item{
+    display:list-item;
+    list-style-type:circle;
+    
+
+}

@@ -1,0 +1,54 @@
+
+.aaa{
+	background-color:rgb(0,255,255);
+	height:350px;
+	width:90%;
+	display:flex;
+	flex-wrap: wrap;
+	flex-direction:row;
+	align-items:flex-start;
+	justify-content:space-between;
+	
+
+}
+.bbb{
+	background-color: rgb(0,255,255);
+	height: 250px;
+	width:500px;
+	margin:4px;
+
+}
+.red{
+	background:red;
+	order:2;
+
+}
+.purple{
+	background:purple;
+	order:1;
+
+}
+.yellow{
+	background-color: yellow;
+	order:3;
+}
+.pink{
+	background-color: pink;
+}
+.ccc{
+	background-color: rgb(0,0,255);
+	height: 150px;
+	/*width: 350px;*/
+	width: 24%;
+	margin: 4px;
+	/*margin-top: 300px;*/
+}
+.purple{
+	background-color: purple;
+
+}
+.grey{
+	background-color: grey;
+	border:solid;
+
+}

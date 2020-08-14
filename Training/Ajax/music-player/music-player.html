@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Music Player</title>
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://kit-pro.fontawesome.com/releases/v5.10.1/css/pro.min.css" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+        }
+
+        .container {
+            max-width: 1140px;
+            margin: 0 auto;
+            width: 1140px;
+        }
+
+        .music-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            grid-template-rows: auto;
+            grid-gap: 10px;
+            margin-top: 50px;
+        }
+
+        .music-grid .music-item .music-cover {
+            width: 100%;
+            height: 180px;
+            overflow: hidden;
+            border-radius: 6px;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .music-grid .music-item .music-cover .icon-play {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+        }
+
+        .music-grid i.fa {
+            color: #ff1100;
+            opacity: 0;
+            transition: all 0.4s ease;
+        }
+
+        .music-cover::before {
+            content: '';
+            background-image: linear-gradient(0deg, #000, transparent);
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .music-item:hover i.fa {
+            fill: #ff3021;
+            opacity: 1;
+        }
+
+        .music-grid .music-item .music-title {
+            font-size: 14px;
+            font-weight: 600;
+            font-family: sans-serif;
+            margin-bottom: 4px;
+        }
+
+        .music-grid .music-item p.music-artist {
+            margin: 0;
+            font-family: sans-serif;
+            font-size: 14px;
+            color: rgb(100, 100, 100);
+        }
+
+        audio {
+            display: none;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* player styling */
+        .player-container {
+            position: fixed;
+            bottom: 0;
+            transform: translateY(100%);
+            width: 100%;
+            background-color: #333333;
+            transition: all 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
+        }
+
+        .player-container.show {
+            transform: translateY(0);
+        }
+
+        .control-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: auto;
+        }
+
+        .control-grid .control-block {
+            display: flex;
+            align-items: center;
+            padding: 8px;
+        }
+
+        .control-block button {
+            color: white;
+            background: transparent;
+            border: none;
+            padding: 6px 10px;
+            font-size: 20px;
+            cursor: pointer;
+            transition: all 0.4s ease;
+        }
+
+        .control-block button:hover {
+            color: #e2e0e0;
+        }
+
+        .control-block span:first-child {
+            margin-right: 10px;
+        }
+
+        .control-block span:last-child {
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+
+        .control-block progress {
+            flex: 1;
+            height: 3px;
+        }
+
+        .control-block .volume {
+            margin-left: 50px;
+            color: white;
+            cursor: pointer;
+            position: relative;
+           
+        }
+
+        .control-block .volume .fas {
+            width: 20px;
+        }
+
+        .control-block .volume:hover .volumeslider {
+            height: 120px;
+        }
+
+        .control-block .volume .volumeslider {
+            position: absolute;
+            height: 0px;
+            overflow: hidden;
+            width: 30px;
+            left: -7px;
+            bottom: 20px;
+            border-radius: 4px;
+            /* background-color: #fff; */
+            /* box-shadow: 0px -1px 20px #0000002e; */
+            transition: height 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+        }
+        
+        .control-block .volume .volumebar-bg {
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%) translateY(7px);
+            position: absolute;
+            height: 100%;
+            background: #ccc;
+            width: 4px;
+        }
+
+        .control-block .volume .volumebar {
+            width: 4px;
+            height: 63px;
+            background-color: #e05454;
+            left: 50%;
+            position: absolute;
+            bottom: 8px;
+            transform: translateX(-50%);
+        }
+
+        .control-block .volume .volume-thumb {
+            position: absolute;
+            bottom: 0px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 12px;
+            height: 12px;
+            border-radius: 15px;
+            border: 3px solid #fff;
+            background: #F44336;
+            box-shadow: 0 0px 8px #00000061;
+        }
+        .songs-block {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .songs-block .songs-cover img {
+            height: 70px;
+            width: 70px;
+            object-fit: contain;
+        }
+
+        .songs-info {
+            margin-left: 20px;
+            color: white;
+        }
+
+        .songs-comment {
+            margin-left: 50px;
+        }
+
+        .songs-comment button {
+            background: transparent;
+            border: none;
+            padding: 10px 10px;
+            font-size: 17px;
+            cursor: pointer;
+            margin-right: auto;
+            color: white;
+        }
+
+        .songs-info .songs-title {
+            font-family: sans-serif;
+            font-size: 14px;
+            margin: 0;
+            margin-bottom: 5px;
+            text-transform: capitalize;
+        }
+
+        .songs-info .songs-artist {
+            margin: 0;
+            font-size: 14px;
+            font-family: sans-serif;
+            font-weight: normal;
+        }
+
+        .currentTime {
+            color: white;
+        }
+
+        .duration {
+            color: white;
+        }
+
+        progress {
+            border-radius: 2px;
+            width: 100%;
+            height: 22px;
+        }
+
+        progress::-webkit-progress-bar {
+            background-color: rgb(0, 0, 0);
+            border-radius: 2px;
+        }
+
+        progress::-webkit-progress-value {
+            border-radius: 2px;
+            background-color: rgb(255, 255, 255);
+        }
+
+        input[type=range][orient=vertical]
+        {
+            writing-mode: bt-lr; /* IE */
+            -webkit-appearance: slider-vertical;
+            -moz-appearance: slider-vertical;
+            appearance: none;
+            width: 8px;
+            height: 100%;
+            padding: 0 5px;
+        }
+
+        input[type=range]::-webkit-slider-thumb {
+            box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+            border: 1px solid #000000;
+            height: 20px;
+            width: 20px;
+            border-radius: 31px;
+            background: rgba(255, 255, 255, 0.59);
+            cursor: pointer;
+            -webkit-appearance: none;
+            margin-top: -9.25px;
+            }
+
+        #random.active {
+            color: orange;
+        }
+
+        #repeat.active {
+            color: orange;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="music-grid"></div>
+    </div>
+
+    <audio src="" id="player" ontimeupdate="initPlayer()"></audio>
+
+    <div class="player-container">
+        <div class="container">
+            <div class="control-grid">
+                <div class="control-block">
+                    <button id="prev"><i class="fa fa-step-backward"></i></button>
+                    <button id="play"><i class="fa fa-play"></i></button>
+                    <button id="next"><i class="fa fa-step-forward"></i></button>
+                    <button id="random"><i class="fa fa-random"></i></button>
+                    <button id="repeat"><i class="fa fa-repeat"></i></button>
+                </div>
+                <div class="control-block ">
+                    <span class="currentTime">0:00</span>
+                    <progress value="0" id="seekbar" max="1"></progress>
+                    <span class="duration"></span>
+                    <div class="volume">
+                        <i class="fas fa-volume-up"></i>
+                        <div class="volumeslider">
+                           <input type="range" min="0" id="volume" max="100" value="50" orient="vertical">
+                        </div>
+                    </div>
+                </div>
+                <div class="songs-block">
+                    <div class="songs-cover">
+                        <img src="./cover/cheap-thrils.jpg">
+                    </div>
+                    <div class="songs-info">
+                        <h2 class="songs-title"> cheap thrils </h2>
+                        <h2 class="songs-artist"> sia </h2>
+                    </div>
+                    <div class="songs-comment">
+                        <button> <i class="fa fa-heart"> </i> </button>
+                        <button> <i class="fa fa-reorder"> </i> </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+   <script src="./js/player.js"></script>
+</body>
+
+</html>

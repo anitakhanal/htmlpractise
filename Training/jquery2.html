@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> jquery remove method</title>
+</head>
+<style>
+    .card-wrapper{
+        padding:10px;
+        margin:15px;
+        border:5px solid black;
+    }
+    #box{
+        height:20px;
+        width:100px;
+        border:2px solid black;
+        color:pink;
+
+    }
+</style>
+<body>
+    <p> jquery remove method removes selected elements</p>
+
+    <button id ="btn"> remove paragraph </button>
+    <button id ="btn1"> remove paragraph  text</button>
+
+    <div class="card-wrapper">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, cum. Consequuntur illum tempore soluta sit, consequatur explicabo aspernatur quo tempora obcaecati fugit laboriosam adipisci? Cupiditate iste nihil quia eos deserunt?
+
+    </div>
+
+    <div id ="box"> lorem ipsum </div>
+    <button id ="button"> click </button>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script>
+        $("#btn").click(function(){
+            $("p").remove();
+        });
+        $("#btn1").click(function(){
+            $("p").empty();
+
+        })
+
+
+        let card= $(".card-wrapper");
+        let cardwidth=card.width();
+        let cardheight=card.height();
+        console.log('width', cardwidth);
+        console.log(cardheight);
+
+        let cardInnerWidth = card.innerWidth();
+        let cardInnerHeight = card.innerHeight();
+        console.log('card inner width', cardInnerWidth);
+        console.log('card inner height  ', cardInnerHeight);
+
+        let cardOuterWidth = card.outerWidth();
+        let cardOuterHeight = card.outerHeight();
+        console.log('card outer width', cardOuterWidth);
+        console.log('card outer height  ', cardOuterHeight);
+
+        $(document).click(function(){
+            card.animate({'height': cardOuterHeight + 100 + 'px'})
+        });
+
+       
+
+        $("#button").click(function(){
+            alert("box width :"+$("#box").width());
+            alert("box height:"+$("#box").height());
+            $("#box").width("200px")
+            
+        })
+
+       
+
+        </script>
+    
+</body>
+</html>

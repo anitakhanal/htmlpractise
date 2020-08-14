@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Canvas Intro</title>
+    <style>
+        body {
+            width: 100vw;
+            height: 100%;
+        }
+        img {
+            max-width: 50%;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <img src="./img.jpg" alt="">
+    <canvas width="1340" height="800"></canvas>
+    <script>
+        // Select a canvas element
+        let canvas = document.querySelector('canvas');
+        let context = canvas.getContext('2d');
+
+        // Draw Elements to a canvas
+        // We can draw :
+        // 1. Text
+        // 2. Lines
+        // 3. rectangles
+        // 4. Paths
+        // 5. Images
+
+        // ============ Rectangles ==========================================
+        // To draw rectangles we have the following methods available
+        // clearRect(x, y, width, height)
+        // fillRect(x, y, width, height)
+        // strokeRect(x, y, width, height)
+
+        // ----- Example 1 ------------
+        // to give a fill color to the fillRect we can use
+        context.strokeStyle = `rgb(0, 0, 255)`; //// any valid css color
+        context.fillStyle = 'black'; // any valid css color
+        // fillRect(x, y, width, height)
+        context.strokeRect(100,100,100,100);
+
+
+        // ---- We can now create as many rectangles as we want ----------
+        for(let i = 0; i < 10; i++) {
+            for(let j = 0; j < 10; j++) {
+                context.strokeStyle = `rgb(0,0,0)`; 
+                // context.strokeRect(j * 40, i * 40, 40, 40);
+            }
+        }
+
+        // ---- Example 3 -------------------
+        // context.clearRect(100,40, 100,100);
+        
+
+
+        // ============ Text ===============================================
+        // To draw text we have two methods
+        // strokeText(text, x, y)
+        // fillText(text, x, y)
+
+        context.font = '60px Poppins'
+        context.strokeStyle = 'black';
+        context.strokeText('Hello canvas', 40, 40);
+
+        context.fillStyle = 'blue';
+        context.fillText('Another text', 40, 100);
+
+
+        // ============ Lines ==============================================
+        // to draw lines we need to call the following methods
+        // beginPath()
+        // moveTo(x0, y0)
+        // lineTo(x1, y1)
+        // stroke() 
+        // line is going to be colored according to the c.strokeStyle
+
+        context.strokeStyle = 'red';
+        context.beginPath();
+        context.moveTo(100, 00);
+        context.lineTo(500, 180);
+        context.stroke();
+
+
+
+        // ========= Images  ===============================================
+        // drawImage(image,x,y)
+        window.onload = function() {
+            let img = document.querySelector('img');
+            console.log(img);
+            context.drawImage(img, 400, 400, 200, 200);
+        }
+
+          
+    </script>
+</body>
+</html>

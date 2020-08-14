@@ -1,0 +1,87 @@
+
+.tour-wrapper{
+	width:100%;
+	margin:auto;
+	background-color: #fbf7f7;
+
+}
+.tour-section{
+	text-align: center;
+	font-style: italic;
+	font-size: 50px;
+	margin-top: 25px;
+}
+.box{
+	width:90%;
+	display:flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	justify-content: space-around;
+	margin-left: 50px;
+box-sizing: border-box;
+}
+.color{
+	background-image: linear-gradient(to top, #000, #fff);
+}
+.temple-name{
+	margin-left: -98px;
+	margin-top: -162px;
+	text-align: center;
+	font-size: 80%;
+	color: white;
+}
+.about-mankamana{
+	margin-left: 10px;
+	color:white;
+	font-size: 15px;
+	margin-top: 30px;
+
+
+}
+.bungy-name{
+	margin-left: -143px;
+	margin-top: -165px;
+	text-align: center;
+	font-size:80%;
+	color: white;
+}
+.about-bungy{
+	margin-top: 30px;
+	margin-left: 13px;
+	color: white;
+	font-size: 15px;
+}
+.paragliding-side{
+	margin-left:-67px;
+	margin-top: -171px;
+	text-align: center;
+	font-size: 80%;
+	color:white;
+}
+.about-paragliding{
+	margin-top: 29px;
+	margin-left:15px;
+	color: white;
+	font-size: 15px;
+}
+.pokhara-view{
+	margin-left:-81px;
+	margin-top: -175px;
+	text-align:center;
+	font-size: 80%;
+	color:white;
+}
+.about-pokhara{
+	margin-top: 30px;
+	margin-left: 18px;
+	color:white;
+	font-size: 15px;
+
+}
+.image{
+	width:23%;
+}
+img{
+	width:107%;
+
+}

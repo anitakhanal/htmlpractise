@@ -1,0 +1,294 @@
+@import url('https://fonts.googleapis.com/css?family=Lobster');
+body {
+    overflow-x: hidden;
+}
+
+.section-header {
+    font-family:Lobster,sans-serif;
+}
+
+.section-header .logo .section-title {
+    font-family: Lobster,sans-serif;
+}
+
+.section-header .navigation .nav-item .nav-link {
+    font-family: Lobster,sans-serif;
+}
+.section-header .navigation .nav-item .nav-link.link{
+    color:purple;
+}
+.container.image-part1 {
+    padding: 40px 0;
+}
+.container.image-part1 .box1{
+    background-color:blue;
+    padding:60px;
+    padding-left:120px;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 30% 100%);
+}
+.container.image-part1 .box1 h2{
+    font-family: Lobster,sans-serif;
+    color:white;
+    font-size:40px;
+}
+.container.image-part1 .box1 p{
+    color:white;
+    font-family: Lobster,sans-serif;
+    font-size:10px;
+    margin-left:20px;
+}
+.container.image-part1 .box1 button{
+    background-color:blue;
+    border:1px solid white;
+    border-radius:20px;
+    padding:10px 10px;
+}
+.container.image-part2{
+    padding:15px;
+    
+    position:relative;
+}
+.container.image-part2 img:first-child{
+position:absolute;
+top:15px;
+left:35px;
+z-index:1;
+
+}
+.container.image-part2 img:last-child{
+    position: absolute;
+    top:0;
+    opacity:0.31;
+    
+}
+.container.image-part2 .box2 h3{
+    font-family: lobster,sans-serif;
+}
+.container.image-part2 .box2 span{
+    height:5px;
+    width:10px;
+    background-color:blue;
+
+}
+.container.image-part2 .box2 p{
+    font-family: lobster,sans-serif;
+
+}
+.container.image-part2 .box2 button{
+    background-color:white;
+    border:1px solid black;
+    border-radius:25px;
+    padding:5px 20px;
+}
+.container.image-part3{
+    padding:10px 45px;
+    background-color:rgba(228, 218, 218, 0.562);
+}
+.container.image-part3 p{
+    font-weight: bold;
+
+}
+.container.image-part3 .box3 p{
+    padding:70px;
+    font-family: lobster,sans-serif;
+    color:rgba(0, 0, 0, 0.26);
+}
+.container.image-part3 .box3 button{
+    background-color:rgba(228, 218, 218, 0.562);
+    border:1px solid black;
+    border-radius:25px;
+    padding:5px 20px;
+    margin: -40px 150px;
+    display:block;
+}
+.container.image-part4 {
+    background-color:rgba(228, 218, 218, 0.562);
+}
+.container.image-part4 .box4{
+    padding:30px 35px;
+}
+.container.image-part4 .box4 p{
+    font-family:lobster,sans-serif;
+}
+.container.image-part4 .box4 button{
+    background-color:rgba(228, 218, 218, 0.562);
+    border:1px solid black;
+    border-radius:25px;
+    padding:5px 20px;
+    margin: 33px -5px;
+}
+.container.image-part5{
+    background-color:rgba(228, 218, 218, 0.562);
+   
+}
+.container.image-part5 .box5{
+   padding:30px;
+}
+.container.image-part5 .box5 h2{
+    font-family: lobster,sans-serif;
+}
+.container.image-part5 .box5 p{
+    font-weight: bold;
+}
+.container.image-part5 button{
+    background-color:rgba(228, 218, 218, 0.562);
+    border:1px solid black;
+    border-radius:25px;
+    padding:5px 20px;
+    margin: 33px 5px;
+}
+.container.image-part6{
+    padding:20px;
+
+}
+.container.image-part6 h1{
+   font-family: lobster,sans-serif;
+}
+.container.image-part6 .image{
+    padding:10px;
+    position: relative;
+}
+.container.image-part6 .image img{
+
+}
+.container.image-part6 .overlay-part{
+    display:flex;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.397);
+}
+.container.image-part6 .overlay{
+    margin:20px;
+    color:white;
+    position: absolute;
+    bottom:0;
+    left:20px;
+}
+.btn button{
+    background-color:rgba(228, 218, 218, 0.562);
+    border:1px solid black;
+    border-radius:25px;
+    padding:5px 20px;
+    margin: 0px auto;
+    display:block;
+    width:200px;
+}
+
+/* ========================== section testimonial ================================ */
+.section-testimonial {
+    position: relative;
+}
+
+.section-testimonial .path1 {
+    position: absolute;
+    left: 0;
+    top: 60px;
+}
+.section-testimonial .path2 {
+    position: absolute;
+    right: 0;
+    top: 60px;
+}
+
+.section-testimonial .path3 {
+    position: absolute;
+    bottom: 0;
+}
+.section-testimonial .path4 {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+.section-testimonial .section-title {
+    font-family: Lobster,sans-serif;
+    font-size: 2.5rem;
+    font-weight: 600;
+    text-align: center;
+    line-height: 1.5;
+}
+
+.section-testimonial .testimonial {
+    background: white;
+    padding: 15px;
+    text-align: center;
+}
+.section-testimonial .testimonial .customer-image {
+    margin-bottom: 10px;
+}
+.section-testimonial .testimonial .customer-info .customer-name {
+    font-family: Lobster,sans-serif;
+    font-size: 1rem;
+}
+
+.section-testimonial .testimonial .customer-info .customer-position {
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+    color:blue;
+}
+.section-query h4{
+    margin-top:20px;
+    color:white;
+}
+.section-query p{
+    margin-top:20px;
+    color:white;
+
+}
+.section-query button{
+   
+    background-color: red;
+    border: 1px solid black;
+    border-radius: 25px;
+    padding: 15px 35px;
+    width: 224px;
+    margin: 15px 5px;
+    display:block;
+
+}
+.section-query{
+    background-image:url("../img/Rectangle 17.png");
+    height:180px;
+}
+.map{
+    width:102%;
+    height:100%;
+}
+.pinnacle-title{
+    margin:-6px;
+    background-color:rgb(0, 3, 42);
+    /* height:250px; */
+    width:100%;
+}
+.pinnacle-title h4{
+    text-align: center;
+    color:white;
+    margin-top:10px;
+    /* font-size:50px; */
+    font-family: lobster ,sans-serif;
+}
+.pinnacle-title ul{
+    margin-left:200px;
+    list-style-type:none;
+   display:inline-block;
+   color:white;
+   display:flex;
+   text-align: center;
+   /* justify-content:space-between; */
+}
+.pinnacle-title li{
+    color:white;
+    text-align:center;
+    padding:10px;
+
+}
+.pinnacle-title h6{
+    color:white;
+    text-align: center;
+}
+.pinnacle-title i{
+    color:white;
+}

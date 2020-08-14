@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        input {
+            color: orange;
+            height: 30px;
+        }
+        .div1{
+            width:200px;
+            height:200px;
+            background:red;
+            display:none;
+        }
+        .div2{
+            width:200px;
+            height:200px;
+            background:green;
+            display:none;
+        }
+        .div3{
+            width:200px;
+            height:250px;
+            background:blue;
+            display:none;
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous">
+        </script>
+
+    <!-- <script>
+        $(document).ready(function() {
+            
+        });
+        // $('p').css({'background':'red', 'height':'400px'});
+    </script> -->
+
+    <p class="mypara">
+        <span>
+            Lorem ipsum dolor sit amet.
+        </span>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facilis iusto asperiores assumenda eaque officia
+        nulla! Deleniti a assumenda provident eaque facere quas velit voluptate omnis, asperiores rerum cumque eos ab?
+    </p>
+
+
+    <button>Click me</button>
+
+    <input class="form-control" value="firstname">
+    <p class="p1"> click or hover this paragraph</p>
+
+    <div class="block"> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi rerum cum natus eveniet dolor saepe dolorum harum expedita quas velit, quae aperiam illum iure. Quas asperiores veritatis ex autem deleniti.</div>
+    <button id="show"> show </button>
+    <button id ="hide"> hide </button>
+
+    <div class="div1"> </div>
+    <div class="div2"> </div>
+    <div class="div3"> </div>
+    <button class="btn"> click </button>
+
+    <script>
+        // $(document).ready(function () {
+        //     $('p').hide();
+        // });
+
+        // $(function(){
+
+        // });
+
+        // $('p').empty();
+
+        $("button").click(myCLickfunc);
+
+        function myCLickfunc() {
+            // $('p').toggle();
+            // $('p').css('background', 'green');
+            // // $('p').text('hello from jqery');
+            // console.log($('p').text());
+
+            // $('p').addClass('newclass');
+            // $('p').removeClass('mypara');
+            // $('p').toggleClass('open');
+            // console.log($('p').html('<span>Hello i am new here</span>'));
+
+            // $("p").mousecenter();
+
+            // $('p').html();
+        }
+
+        // $("p").mousedown(function () {
+        //     alert('mousedown');
+        //     //    $("p").toggle();
+        //     //    $("p").mousecenter();
+
+        // });
+
+        $(".form-control").focus(function () {
+            $(this).css("background-color", "red");
+            $(this).val("anita");
+        });
+        $(".form-control").blur(function () {
+            $(this).css("background-color", "white");
+            $(this).val("firstname");
+        });
+        $(".p1").on("click", function(){
+            $(this).css("font-size","20px");
+        });
+
+        $("p").on({
+            mouseenter:function(){
+                $(this).css("background-color","gray");
+
+            },
+            mouseleave:function(){
+                $(this).css("background-color", "green");
+            }
+        });
+        $("#show").click(function(){
+            $(".block").fadeIn("fast"); 
+        });
+        $("#hide").click(function(){
+            $(".block").fadeOut(1000);
+        });
+        // $("#hide").click(function(){
+        //     $(".block").hide(1000);
+        //     $(".block").toggle(1000);
+        // });
+
+        $(".btn").click(function(){
+            $(".div1").fadeOut();
+            $(".div2").fadeIn();
+            $(".div3").fadeToggle(2000);
+        });
+
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,61 @@
+.select-menu {
+  position: relative;
+  display: inline-block;
+  font-family: Poppins,sans-serif;
+  font-size: 14px;
+}
+
+.select-menu-input {
+  background: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 10px 15px;
+  -webkit-box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.26);
+          box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.26);
+  cursor: pointer;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+.select-menu-input:hover {
+  background-color: #f7f7f7;
+}
+
+.select-menu-input .placeholder {
+  min-width: 106px;
+}
+
+.select-menu-input .display-value {
+  display: none;
+  min-width: 106px;
+}
+
+.select-menu-options {
+  position: absolute;
+  background-color: white;
+  width: 100%;
+  -webkit-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.26);
+          box-shadow: 0 3px 3px rgba(0, 0, 0, 0.26);
+  display: none;
+}
+
+.select-menu-option {
+  padding: 5px 15px;
+  cursor: pointer;
+  min-height: 31px;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+.select-menu-option:hover {
+  background-color: #f7f7f7;
+}
+
+i.fa {
+  margin-left: 10px;
+}
+/*# sourceMappingURL=dropdown.css.map */

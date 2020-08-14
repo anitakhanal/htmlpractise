@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 174 500">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fcd10a;
+      }
+    </style>
+  </defs>
+  <path id="world" class="cls-1" d="M-16.169,0H-16V500H-190S-16.169,477.966-16.169,252.809Z" transform="translate(190)"/>
+</svg>

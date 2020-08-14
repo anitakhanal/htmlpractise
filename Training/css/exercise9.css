@@ -1,0 +1,87 @@
+<style>
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+</style>
+*{
+    box-sizing: border-box
+}
+body{
+    margin:0;
+    padding:0;
+}
+.container{
+    position: relative;
+    margin:auto;
+    height:100vh;
+    width:99%;
+    background-position:0 0, 0 -75px;
+    background-repeat: no-repeat;
+    background-image:linear-gradient(to bottom,rgba(77, 60, 131, 0.705),rgba(77, 60, 131, 0.795)),
+    url('../img/image 1.png');
+}
+.studio{
+    
+}
+.studio img{
+    position:absolute;
+    left:30px;
+    top:20px;
+}
+ h1{
+    font-family:roboto,sans-serif;
+    position: absolute;
+    color:white;
+    top:100px;
+    left:550px;
+}
+p{
+font-family:roboto,sans-serif;
+position: absolute;
+font-size:30px;
+left:350;
+top:140;
+color:rgba(255, 255, 255, 0.342);
+
+}
+ .image img{
+ position: absolute;
+ left:650px;
+ top:250px;
+}
+h2{
+    font-family:roboto,sans-serif;
+    position: absolute;
+    color:rgba(255, 255, 255, 0.473);
+    left:320;
+    top:350px;
+    font-size:20px;
+    text-align: center;
+    width:700px;
+}
+h3{
+    position: absolute;
+    left:650;
+    top:420px;
+    color:white;
+
+}
+.phone p{
+    position: absolute;
+    left:100px;
+    top:600px;
+    color:white;
+    font-size:15px;
+}
+h6{
+    position: absolute;
+    right:30px;
+    top:580px;
+    font-size:15px;
+    color:white;
+}
+.dots{
+    height:40%;
+    width:40%;
+    display:inline-block;
+    background-color:white;
+    border-radius:2%;
+}

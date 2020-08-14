@@ -1,0 +1,92 @@
+[
+    {
+        "id" : 1,
+        "title": "Cham Cham",
+        "artist": "aBcd",
+        "cover": "./cover/chamcham.jpg",
+        "src": "./songs/chamcham.mp3"
+    }, 
+    {
+        "id" : 2,
+        "title": "jalte-diye",
+        "artist": "aBcd",
+        "cover": "./cover/jalte-diye.jpg",
+        "src": "./songs/jalte-diye.mp3"
+    },
+    {
+        "id" : 3,
+        "title": "janam",
+        "artist": "aBcd",
+        "cover": "./cover/janam.jpg",
+        "src": "./songs/janam.m4a"
+    },
+    {
+        "id" : 4,
+        "title": "oyeoye",
+        "artist": "aBcd",
+        "cover": "./cover/oyeoye.jpg",
+        "src": "./songs/oyeoye.mp3"
+    },
+    {
+        "id" : 5,
+        "title": "shandaar",
+        "artist": "aBcd",
+        "cover": "./cover/shandaar.jpg",
+        "src": "./songs/shandaar.mp3"
+    },
+    {
+        "id" : 6,
+        "title": "thousand-year",
+        "artist": "christina perri",
+        "cover": "./cover/thousand-year.jpg",
+        "src": "./songs/thousand-year.m4a"
+    },
+    {
+        "id" : 7,
+        "title": "zayn-she",
+        "artist": "zyan",
+        "cover": "./cover/zayn-she.jpg",
+        "src": "./songs/zyan-she.m4a"
+    },
+    {
+        "id" : 8,
+        "title": "lagja",
+        "artist": "aBcd",
+        "cover": "./cover/lagja.jpg",
+        "src": "./songs/lagja.mp3"
+    },
+    {
+        "id" : 9,
+        "title": "comeon",
+        "artist": "cheapthrils",
+        "cover": "./cover/comeon.jpg",
+        "src": "./songs/comeon.m4a"
+    },
+    {
+        "id" : 10,
+        "title": "cheap-thrils",
+        "artist": "aBcd",
+        "cover": "./cover/cheap-thrils.jpg",
+        "src": "./songs/cheap-thrils.mp3"
+    },
+    {
+        "id" : 11,
+        "title": "1D-perfect",
+        "artist": "1D",
+        "cover": "./cover/1D-perfect.png",
+        "src": "./songs/1D-perfect.mp3"
+    },
+    {
+        "id" : 12,
+        "title": "tere-sang",
+        "artist": "aBcd",
+        "cover": "./cover/tere-sang.jpg",
+        "src": "./songs/tere-sang.mp3"
+    }
+    
+    
+    
+    
+    
+    
+]

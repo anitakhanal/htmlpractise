@@ -1,0 +1,224 @@
+.product{
+    .image{
+        position:relative;
+       
+    }
+    .image ul{
+        position:absolute;
+        top:80%;
+        left:50%;
+        transform:translateX(-50%);
+
+        list-style-type:none;
+        display:flex;
+    }
+    .image li{
+        height:20px;
+        width:20px;
+        background-color:white;
+        margin:10px;
+
+    }
+    .image .active{
+        background-color:red;
+        border: 3px solid white;
+    }
+    .contact-wrapper{
+        background-color:rgba(128, 128, 128, 0.459);
+        min-height: 200px;
+        border-radius:24px;
+    }
+    
+    .contact h1 {
+        text-align: center;
+        font-family: poppins,sans-serif;
+        font-size: 1.5rem;
+        padding: 10px;
+        font-weight: bold;
+    
+
+    }
+    .connect{
+        margin-left:10px;
+        padding:5px;
+    }
+   .connect i{
+    margin-right: 10px;
+    background-color: #ececec;
+    padding: 3px 2px;
+    width: 30px;
+    text-align: center;
+    border-radius: 20px;
+   }
+   .img_map{
+    height: 160px;
+    width: 64%;
+    position: absolute;
+    left: 74px;
+    top: 158px;
+    overflow: hidden;
+    border-radius: 24px;
+}
+   }
+   .welcome-wrapper{
+      position:relative;
+      background-color:white;
+      padding: 109px 15px;
+      box-shadow: 15px 0 0 13px #ebdddd14;
+      margin: 40px 0;
+      border-radius: 0 50% 50% 0;
+      z-index: 1;
+
+
+   }
+   .welcome h1{
+    font-family: poppins ,sans-serif;
+    font-weight: bold;
+    position:absolute;
+    top:30px;
+   }
+   .welcome p{
+    font-family: poppins ,sans-serif;
+    font-weight: bold;
+    position:absolute;
+    top:90px;
+   }
+   .read-more{
+       background-color: #008271;
+       border-radius:24px;
+       border:2px solid #008271;
+       padding:10px;
+       color:white;
+       margin-top:20px;
+       width: 100%;
+   }
+   .image-wrapper{
+    margin-top: 80px;
+    position: relative;
+    width: 80vh;
+    
+   }
+   .image1 img{
+    height: 50vh;
+    position: absolute;
+    left: -100px;
+   }
+   .play{
+    background-color: #008271;
+    position: absolute;
+    top:40%;
+    left: 52%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius:50%;
+    padding:10px;
+    text-align: center;
+    width:100px;
+    height: 100px;
+    z-index: 2;
+
+   }
+   .products{
+       font-family: poppins ,sans-serif;
+       font-size: 2.5rem;
+       font-weight:bold;
+       text-align: center;
+   }
+   .steel-wrapper{
+       position:relative;
+       width:100%;
+       display: inline-block;
+       background-image: url('../steel-bar-1.png'), url('../steel-bar\ -\ Copy.png'); 
+   }
+
+   .images-steel{
+       height:170px;
+       overflow:hidden;
+       position: relative;
+       transition: all 0.4s ease;
+    //    margin-top:40px;
+     
+   }
+   .images-steel img{
+       height:100%;
+       width:100%;
+       object-fit:cover;
+   }
+//    .image-steel .about-steel{
+//        position: absolute;
+//        height:100%;
+//        width: 100%;
+//        background-color:#0082716b;
+//        bottom:0;
+//        left:0;
+//        right:0;
+//        overflow:hidden;
+//        text-align: center;
+//     //    display:flex;
+//        justify-content: center;
+
+//    }
+   .btn2{
+       background-color:white;
+       border:2px solid white;
+       border-radius: 24px;
+       padding:10px;
+       position:absolute;
+       top:51%;
+       left:20px;
+   }
+
+   .images-steel .title {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background: white;
+    padding: 5px 15px;
+    border-radius: 25px;
+   }
+   .description {
+        
+        position: absolute;
+        bottom: 10px;
+        top: 10px;
+        left: 10px;
+        right: 10px;
+        background: rgba(11, 119, 104, 0.8);
+        padding: 10px;
+        overflow: hidden;
+        color: white;
+        transition: all 0.4s ease;
+        opacity: 0;
+        transform: translateX(-100%);
+
+    h2 {
+        font-size: 14px;
+    }
+
+    p {
+        font-size: 13px;
+        margin-bottom: 0;
+    }
+
+    button {
+        display: block;
+        margin-left: auto;
+        background: transparent;
+        border: none;
+        color: white;
+        cursor: pointer;
+    }
+ }
+   
+
+ .images-steel:hover {
+     .title {
+         display: none;
+     }
+     .description {
+         opacity: 1;
+         display: block;
+         transform: translateY(0);
+     }
+ }

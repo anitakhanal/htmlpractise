@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>video-play</title>
+</head>
+<style>
+    main{
+        width:64%;
+        float:left;
+    }
+    aside{
+        width:35%;
+        float:right;
+    }
+    video{
+        width:100%;
+    }
+    .video{
+         margin-bottom:15px;
+         display:flex;
+         flex-wrap:wrap;
+         align-items: center;
+    }
+    .video .video-thumb {
+            width: 150px;
+            height: 100px;
+        }
+        .video .video-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .video .video-desc {
+            padding: 0 10px;
+            flex: 1;
+        }
+        .video .video-title {
+            font-family: sans-serif;
+            font-size: 18px;
+            margin: 0;
+            margin-bottom: 10px;
+        }
+        .video .video-subtitle {
+            font-family: sans-serif;
+            font-size: 14px;
+            margin: 0;
+        }
+</style>
+<body>
+    <header></header>
+    <main>
+        <div class="media">
+            <video id="videoPlayer" controls src="songs/finally found you.mp4"></video> 
+            <div class="media-desc">
+                <h2 class="title"> </h2>
+                <p class="description"></p>
+            </div>
+        </div>
+    </main>
+
+    <aside>
+        <div class="videos"></div>
+    </aside>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script>
+       let videos =[];
+       let videoplayerElement = document.getElementById('videoPlayer');
+       window.onload = function() {
+        getVideos();
+       }
+
+       function getVideos(){
+           $.getJSON('videos.json').done(function(data){
+               videos = data.categories[0].videos;
+               generateVideoViews();
+               playVideo(videos[0]);
+           }) .fail(function(err){
+               console.log(err);
+           });
+       }
+       function generateVideoViews() {
+           if(!videos.length)
+           {
+               return;
+           }
+           let videoHTML = "";
+           videos.map(function(video,index){
+               videoHTML +=
+               `
+                <div class="video" data-index="${index}">
+                    <div class="video-thumb"><img src="${video.thumb}"></div>
+                    <div class="video-desc">
+                        <h2 class="video-title">${video.title}</h2>
+                        <p class="video-subtitle">${video.subtitle}</p>
+                    </div>
+                </div>
+                `;
+            });
+            $('.videos').html(videoHTML);
+        }
+
+        function playVideo(video) {
+            console.log(video);
+            videoplayerElement.src = video.sources[0];
+            $('.title').text(video.title);
+            $('.description').text(video.description);
+            videoplayerElement.play();
+        }
+
+
+        $(document).ready(function(){
+            $(document).on('click', '.video', function(e) {
+                console.log('clicked');
+                let index = +$(this).data('index');
+                playVideo(videos[index]);
+            }); 
+        });
+    </script>
+</body>
+</html>

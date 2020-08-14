@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Todo App</title>
+    <link rel="stylesheet" href="css/todo.css">
+</head>
+<body>
+    <h1>Todo App</h1>
+    <div class="todo-form">
+        <input type="text" placeholder="Enter the task" class="form-control" id="taskInput">
+        <button class="btn-add">Add task</button>
+    </div>
+    <div class="tasks"></div>
+    </div>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script>
+
+        // let storedData = localStorage.getItem('todos') || [];
+        let storedData = [];
+        
+        getTask();
+
+        $('.btn-add').click(function(){
+            let inputValue = $('#taskInput').val();
+            console.log(inputValue);
+            let taskElem = $('.tasks');
+
+            if(!inputValue) {
+                alert('Enter task');
+                return;
+            }
+            
+            console.log($.inArray(inputValue, storedData));
+            if($.inArray(inputValue, storedData)) {
+                storedData.push(inputValue);
+                localStorage.setItem('todos', JSON.stringify(storedData));
+            } 
+
+            getTask();
+        });
+
+        $('input[type=checkbox]').change(function() {
+            $(this).parent().toggleClass('completed');
+        });
+        
+        function getTask() {
+            if(localStorage.getItem('todos')) {
+                storedData = JSON.parse(localStorage.getItem('todos'));
+            }
+            for(let taskIndex in storedData) {
+                $('.tasks').prepend(`<div class="task" data-taskid="${taskIndex}"><input type="checkbox">${storedData[taskIndex]}  <button onclick="deleteTask(${taskIndex})">x</button></div>`);
+            }
+        }
+
+        function deleteTask(index) {
+            storedData.splice(index, 1);
+            console.log(storedData);
+            $(`[data-taskid=${index}]`).remove();
+        
+            localStorage.setItem('todos', JSON.stringify(storedData));
+        }
+    </script> 
+</body>
+</html>

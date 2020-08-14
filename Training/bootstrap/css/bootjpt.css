@@ -1,0 +1,64 @@
+body {
+    font-family: Poppins, sans-serif;
+}
+.container{
+    /* margin:0; */
+    padding: 0;
+}
+.nav-wrapp{
+    background-color:rgb(248, 249, 250);
+}
+.nav-item button{
+    background-color:blue;
+    border:1px solid blue;
+    border-radius:45px;
+    letter-spacing: 2px;
+    color:black;
+}
+.image img{
+    width:100%;
+    height:80vh;
+}
+
+
+.search-section {
+    background-image: linear-gradient(to top, rgba(0,0,0,.3),rgba(0,0,0,.3)), url(https://d19m59y37dris4.cloudfront.net/directory/1-1/img/photo/photo-1501621965065-c6e1cf6b53e2.jpg);
+    height: 91vh;
+}
+
+.search-section p {
+    color: #e83e8c;
+    font-family: Poppins,sans-serif;
+    font-size: 20px;
+    letter-spacing: 3px;
+    text-shadow: 0 0 2px #000000b8;
+    margin-bottom: 0;
+}
+
+.search-section .heading {
+    font-family: Poppins,sans-serif;
+    font-size: 50px;
+    font-weight: bold;
+    line-height: 1.5;
+    color: white;
+}
+
+.search-section .search-wrapper {
+    margin: 0 auto;
+    background: white;
+    border-radius: 25px;
+    display: inline-block;
+    overflow: hidden;
+    padding: 4px 4px 4px 15px;
+}
+
+.search-section .search-wrapper .btn-primary {
+    border-radius: 25px;
+}
+
+.search-section .search-wrapper .location-icon {
+    background-image: url(https://img.icons8.com/windows/32/000000/location-off.png);
+    width: 32px;
+    height: 32px;
+    background-repeat: no-repeat;
+}0

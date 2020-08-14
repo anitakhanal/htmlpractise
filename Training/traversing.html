@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+div{
+    /* height:50px; */
+    /* width:100px; */
+    border:1px solid black;
+    padding:15px;
+    /* background-color:pink; */
+    /* color:white; */
+}
+span{
+    display:block;
+    border:1px solid red;
+    padding:20px;
+    /* background-color:blue; */
+    /* color:white; */
+}
+</style>
+
+<body>
+    <div class="grandparent">
+        grandparent
+        <div class="parent">
+            parent
+            <span class="child"> child</span> 
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script>
+        console.log($("span").parent());
+        // let text = $("span").parent().css("background","red");
+        // alert(text);
+        // $("span").parents().css("border","2px solid red");
+        // $("span").parents(".grandparent").css("border","2px solid blue")
+        $("span").parentsUntil("child").css("border","2px solid blue");
+    </script>
+</body>
+</html>

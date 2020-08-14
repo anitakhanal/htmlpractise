@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        box-sizing: border-box;
+    }
+    body {
+        margin: 0 auto;
+    }
+    .card-wrapper {
+        height: 50%;
+        width: 80%;
+        background-color: skyblue;
+        margin: 10px;
+        /* display: inline-block; */
+    }
+
+    .image {
+        display: flex;
+        margin: 20px 10px;
+    }
+
+    .image img {
+        margin-top: 10px;
+    }
+
+    .user-info {
+        margin: 10px;
+    }
+
+    /*  */
+    .user-container {
+        width: 1140px;
+        margin: 0 auto;
+    }
+    .row {
+        display: flex;
+    }
+
+    .col-6 {
+        flex-basis: 50%;
+        max-width: 50%;
+    }
+    .card {
+        display: block;
+        padding: 20px;
+        width: 400px;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.26);
+        margin: 0 auto;
+        border-radius: 6px;
+    }
+    .card h4 {
+        font-family: sans-serif;
+        margin-top: 0;
+    }
+    .form-group {
+        margin-bottom: 15px;
+        font-family: sans-serif;
+    }
+
+    label {
+        margin-bottom: 5px;
+        display: block;
+        color: rgb(59, 59, 59);
+        font-size: 14px;
+    }
+
+    input {
+        width: 100%;
+        padding: 10px;
+        border-radius: 4px;
+        /* border: 1px solid #ccc; */
+        background: #f1f1f1;
+        border: none;
+    }
+
+    .btn-add-user {
+        padding: 10px;
+        background: blue;
+        border: none;
+        color: white;
+        border-radius: 2px;
+        cursor: pointer;
+        transition: all 0.4s ease;
+    }
+    .btn-add-user:hover {
+        background: rgb(0, 0, 219);
+        box-shadow: 0 5px 10px 0px rgba(0, 0, 255, 0.32)
+    }
+    .btn-add-user:active {
+        background: rgb(0, 0, 187);
+        box-shadow: none;
+    }
+
+    .users {
+        padding: 10px;
+        overflow: hidden;
+    }
+
+    .users .user {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+        border-radius: 6px;
+        transition: all 0.3s ease;
+    }
+
+    .users .user:hover {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.26);
+    }
+
+    .users .user .user-image {
+        width: 100px;
+        height: 100px;
+        overflow: hidden;
+    }
+
+    .users .user .user-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .users .user .user-info .user-name {
+        margin-top: 0;
+        font-family: sans-serif;
+        margin-bottom: 0.5rem;
+    }
+    .users .user .user-info .user-email {
+        font-family: sans-serif;
+        margin: 0;
+    }
+</style>
+
+<body>
+    <!-- <div id="demo"> Hello Html</div>
+    <button onclick="loadDoc()">Load document</button> -->
+
+    <div class="card-wrapper"></div>
+
+    <div class="user-container">
+        <div class="row">
+            <div class="col-6">
+                <div class="card">
+                    <h4>Add new user</h4>
+                    <form class="newUserForm">
+                        <div class="form-group">
+                            <label for="">First Name</label>
+                            <input type="text" name="first_name" id="first_name" placeholder="Enter first name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Last Name</label>
+                            <input type="text" name="last_name" id="last_name" placeholder="Enter last name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Email Name</label>
+                            <input type="email" name="email" id="email" placeholder="Enter email address" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Profile Picture</label>
+                            <input type="url" name="avatar" id="avatar" placeholder="Enter image link" required>
+                        </div>
+                        <button class="btn-add-user">Add User</button>
+                    </form>
+
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="users"></div>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script>
+    $.ajax({
+        url: "https://reqres.in/api/users?per_page=6",
+        type: "GET",
+        success: function (response) {
+            if(response && response.data) {
+                let users = response.data;
+                usersHtml = '';
+                for (let i = 0; i < users.length; i++) {
+                    usersHtml += `
+                    <div class="user" id="user${users[i].id}">
+                        <div class="user-image">
+                            <img src="${users[i].avatar}" alt="user-profile-image">
+                        </div>
+                        <div class="user-info">
+                            <h2 class="user-name">${users[i].first_name} ${users[i].last_name}</h2>
+                            <p class="user-email">${users[i].email}</p>
+                            <button onclick="deleteUser(${users[i].id})">Delete</button>
+                        </div>
+                    </div>
+                    `;
+                }
+                $('.users').html(usersHtml);
+            }
+        },
+        error: function (error) {
+            console.log(error);
+        }
+    });
+
+    $('.newUserForm').submit(function(event){
+        event.preventDefault();
+
+        let first_name = $('#first_name').val();
+        let last_name = $('#last_name').val();
+        let email = $('#email').val();
+        let avatar = $('#avatar').val();
+
+        if(!first_name) {
+            alert('First name invalid');
+            return;
+        }
+
+        if(!last_name) {
+            alert('Last name invalid');
+            return;
+        }
+        if(!email) {
+            alert('email invalid');
+            return;
+        }
+        if(!avatar) {
+            alert('avatar invalid');
+            return;
+        }
+
+        $.ajax({
+            url: 'https://reqres.in/api/users',
+            type: 'POST',
+            data: {first_name: first_name, last_name:last_name, email:email, avatar: avatar},
+            success: function(res) {
+                if(res) {
+                    $('.users').prepend(`
+                    <div class="user">
+                        <div class="user-image">
+                            <img src="${res.avatar}" alt="user-profile-image">
+                        </div>
+                        <div class="user-info">
+                            <h2 class="user-name">${res.first_name} ${res.last_name}</h2>
+                            <p class="user-email">${res.email}</p>
+                        </div>
+                    </div>`);
+                }
+            }, 
+            error: function(err) {
+                console.log(err);
+            }
+        });
+    });
+
+    function deleteUser(userid) {
+        if(userid) {
+            $.ajax({
+                url: `https://reqres.in/api/users/${userid}`,
+                type: 'DELETE',
+                success: function(res) {
+                    $(`#user${userid}`).remove();
+                }, 
+                error: function(err) {
+
+                }
+            });
+        }
+    }
+
+    function loadDoc() {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                let response = JSON.parse(this.responseText);
+                let users = response.data;
+                let useHTML = '';
+                for (let i = 0; i < users.length; i++) {
+                    useHTML += `<div class="image">
+                                    <img src="${users[i].avatar}">
+                                    <div class="user-info">
+                                        <h1>${users[i].first_name} ${users[i].last_name}</h1>
+                                        <h2> ${users[i].email}</h2> 
+                                    </div>
+                                </div>`;
+
+                }
+
+                document.querySelector(".card-wrapper").innerHTML = useHTML;
+            }
+            // document.getElementById('demo').innerHTML = this.responseText;
+
+        }
+        xhttp.open("GET", "https://reqres.in/api/users?page=1", true)
+        xhttp.send();
+    }
+    // loadDoc();
+</script>
+
+</html>

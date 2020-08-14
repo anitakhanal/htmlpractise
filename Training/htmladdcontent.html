@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Prepend, append, before, after</title>
+    <style>
+        .list ul {
+            display:flex;
+            justify-content: space-between;
+            border:1px solid black;
+
+        }
+        .list ul li{
+            padding:10px 20px;
+            margin:20px 20px;
+
+        }
+
+
+    </style>
+</head>
+<body>
+    <main></main>
+
+    <div class="imageBlock"></div>
+    <div class="list"></div>
+    <div class="image"></div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+    <script>
+        setTimeout(function(){
+            $('main').append('<div class="body">lorem ipsum dollar seasdasd asdasda</div>');
+        }, 2000);
+        setTimeout(function(){
+            $('main').after('<aside>This is side content</aside>');
+        }, 3000);
+
+        let tableHtml = '<table border="1" style="background-color:red">';
+                tableHtml += '<thead>';
+                tableHtml += '<tr>';
+                tableHtml += '<th style="color: white;">Name </th>';
+                tableHtml += '<th>Adress</th>';
+                tableHtml += '<th>Phone</th>';
+                tableHtml += '</tr>';
+                tableHtml += '</thead>';
+                tableHtml += '<tbody>';
+                    tableHtml += '<tr>';
+                    tableHtml += '<td>Ram</td>';
+                    tableHtml += '<td>btl</td>';
+                    tableHtml += '<td>985637624</td>';
+
+                    tableHtml += '</tr>';
+                    tableHtml += '<tr>';
+                    tableHtml += '<td>shyam</td>';
+                    tableHtml += '<td>ktm</td>';
+                    tableHtml += '<td style="background-color:blue;color:pink;" >985637624</td>';
+
+                    tableHtml += '</tr>';
+                tableHtml += '</tbody>';
+            tableHtml += '</table>';
+
+            let listHtml = "<ul style=\"list-style-type:none\">";
+            listHtml += "<li> Home </li> ";
+            listHtml += "<li> Contact </li>";
+            listHtml += "<li> Address </li>";
+            listHtml += "<li> gender </li>";
+            listHtml += "<li> job </li>";
+            listHtml +="</ul>";
+
+    
+
+
+        $("main").append(tableHtml);
+        $('.imageBlock').append('<img src="https://static.bhphotovideo.com/explora/sites/default/files/Snow-TS.jpg">');
+        $(".list").append(listHtml);
+        $(".image").append('<img src = "https://tse1.mm.bing.net/th?id=OIP.W3lf5FuhME6Xtpn9KkgtDwHaEK&pid=Api&P=0&w=282&h=159" style="padding:10px"><img src = "https://tse1.mm.bing.net/th?id=OIP.W3lf5FuhME6Xtpn9KkgtDwHaEK&pid=Api&P=0&w=282&h=159">');
+    </script>
+</body>
+</html>

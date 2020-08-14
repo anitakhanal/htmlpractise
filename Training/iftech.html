@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>IFTECHNOLOGY </title>
+</head>
+<style>
+    .header{
+        display:flex;
+        /* justify-content: space-around; */
+        border:0;
+        border-bottom:1px solid black;
+        padding:-5px;
+    }
+    .header-image{
+        /* padding: 19px 15px; */
+        /* width: 100px; */
+        /* height: 100px; */
+    }
+    .header-image img{
+        /* height: 50%; */
+        /* width: 75%; */
+        width: 100%;
+        object-fit: cover;
+        
+    }
+   .list{
+       /* display:flex; */
+
+   }
+   .list ul{
+       display:flex;
+       list-style: none;
+       margin: 0;
+   }
+   .list ul li ul{
+       width: 100px;
+       height: auto;
+       display: block;
+        background:blue;
+        margin-bottom: 30px;
+
+        /* position: relative; */
+   }
+   .list ul li ul li
+
+   {
+       text-align: center;
+       padding: 10px;
+       border-bottom: 1px solid red;
+   }
+
+   .list li{
+       font-family:sans-serif;
+       /* margin:10px 34px; */
+       color:black;
+       font-weight: bold;
+
+       padding:0 30px;
+       }
+       .container-fluid{
+           margin-top:20px;
+       }
+       .modal{
+           height:60vh;
+           width:50%;
+           background-color:rgb(27, 214, 205);
+           margin:0 auto;
+           padding:10px;
+           
+         }
+         .modal-title{
+            text-align: center;
+            font-size:50px;
+            font-weight: bold;
+            color:rgba(0, 0, 0, 0.568);
+         }
+         .aa{
+            display:flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom:20px;
+         }
+        .btn{
+             border-radius:24px;
+             border:1px solid red;
+             background-color:red;
+             height: 15%;
+            width: 18%;
+            text-align: center;
+            font-size: 28px;
+}
+         
+         .button{
+             display:flex;
+             flex-direction:column;
+             padding:5px;
+         }
+          .button span{
+             height:1px;
+             width:40px;
+             background-color:white;
+             display:inline-block;
+             margin-bottom:5px;
+         }
+
+</style>
+<body>
+    <div class ="container"> 
+        <div class="header">
+            <div class="header-image">
+            <img src ="https://www.lftechnology.com/wp-content/themes/Archive/img/logo_leapfrog.svg">
+            </div>
+           
+
+            <div class="list">
+                <ul> 
+                    <li style="background: chartreuse; color:white; height:50px">About
+                        <ul >
+                            <li>sira</li>
+                            <li>anitu</li>
+                            <li>suraz</li>
+                           
+                        </ul>
+
+                         </li>
+                    <li> Case Studies</li>
+                    <li>Insights </li>
+                    <li> AI </li>
+                    <li> Careers </li>
+                    <li> Contact </li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="container-fluid">
+            <div class="modal">
+                <div class="modal-title"> MODAL </div>
+                <div class="aa">
+                <div class="btn"> click me </div>
+                <div class ="button">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        </div> 
+
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script>
+        $(document).ready (function(){
+            
+
+        })
+    </script>
+</body>
+
+</html>

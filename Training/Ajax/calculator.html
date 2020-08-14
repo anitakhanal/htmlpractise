@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>calculator</title>
+    <link rel="stylesheet" href="calculator.css">
+</head>
+<body>
+    <div class="calculator-wrapper">
+        <table border="1">
+            <tr>
+                <td colspan="4" id="result">100 </td>
+            </tr>
+            <tr>
+                <td colspan="2"> <button id="ac"> AC </button> </td>
+                <td> <button id="del"> DEL </button> </td>
+                <td> <button id="divide"> /</button> </td>
+            </tr>
+            <tr>
+                    <td> <button id="one"> 1 </button> </td>
+                    <td> <button id="two"> 2 </button> </td>
+                    <td> <button id="three"> 3 </button> </td>
+                    <td> <button id="multiply"> * </button> </td>
+            </tr>
+            <tr>
+                    <td> <button id="four"> 4 </button> </td>
+                    <td> <button id="five"> 5 </button> </td>
+                    <td> <button id="six"> 6 </button> </td>
+                    <td> <button id="plus"> + </button> </td>
+            </tr>
+            <tr>
+                    <td> <button id="seven"> 7 </button> </td>
+                    <td> <button id="eight"> 8 </button> </td>
+                    <td> <button id="nine"> 9 </button> </td>
+                    <td> <button id="minus"> - </button> </td>
+            </tr>
+            <tr>
+                    <td> <button id="decimal"> . </button> </td>
+                    <td> <button id="zero"> 0 </button> </td>
+                    <td colspan="2"> <button id="equal"> = </button> </td>
+            </tr>
+
+        </table>
+
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script>
+           let one = $('#one'), 
+                two = $('#two'),
+                three = $('#three'),
+                four = $('#four'),
+                five = $('#five'),
+                six = $('#six'),
+                seven = $('#seven'),
+                eight = $('#eight'),
+                nine = $('#nine'),
+                equal = $('#equal'),
+                plus = $('#plus'),
+                minus = $('#minus'),
+                divide = $('#divide'),
+                multiply = $('#multiply'),
+                del = $('#del'),
+                ac = $('#ac'),
+                result = $('#result');
+
+            ac.click(function() {
+                result.text(0);
+                resultString = '';
+            });
+
+            del.click(function() {
+                let resultText = result.text().toString();
+                let res = resultText.substring(0, resultText.length - 1); 
+                result.text(res.length > 0 ? res: 0);
+            });
+            let resultString = '';
+            let operandFirst = '';
+            let operandLast = '';
+            let operator = null;
+
+            $('#one, #two, #three, #four, #five, #six, #seven, #eight, #nine, #zero ').click(function(){
+                if(!operator) {
+                    resultString += $(this).text().trim();
+                    //  = operandFirst;
+                    result.text(resultString);
+                } else {
+                    resultString += $(this).text().trim();
+                    // operandLast;
+                    result.text(resultString);
+                }
+            });
+            $('#divide, #multiply, #plus, #minus').click(function(){
+                operator = $(this).text().trim();
+                result.text(resultString += operator);
+                
+            });
+            $('#equal').click(function() {
+               let finalResult = 0;
+               console.log(resultString.split(operator));
+                let operandArr = resultString.split(operator);
+                operandFirst = operandArr[0];
+                operandLast = operandArr[1];
+
+               console.log(operator)
+               switch(operator) {
+                   case '+':
+                        finalResult = Number(operandFirst) + Number(operandLast);
+                        break;
+                    case '-':
+                        finalResult = Number(operandFirst) - Number(operandLast);
+                        break;
+                    case '*':
+                        finalResult = Number(operandFirst) * Number(operandLast);
+                        break;
+                    case '/':
+                        finalResult = Number(operandFirst) / Number(operandLast);
+                        break;
+               }
+
+               result.text(finalResult);
+
+            });
+        </script>
+       
+    
+</body>
+</html>

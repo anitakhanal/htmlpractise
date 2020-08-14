@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Animate 2</title>
+</head>
+<body>
+    <canvas width="400" height="400"></canvas>
+
+    <script>
+        let canvas  = document.querySelector('canvas');
+        let ctx = canvas.getContext('2d');
+
+        let circles = [
+            {x: 10, y: 10},
+            {x: 40, y: 40},
+            {x: 60, y: 80},
+            {x: 80, y: 100},
+            {x: 150, y: 140},
+        ];
+
+        function drawCircle(circle) {
+            ctx.beginPath();
+            ctx.arc(circle.x, circle.y, 20, 0, 360 );
+            ctx.stroke();
+        }
+
+        circles.forEach(drawCircle);
+        // for(let i = 0; i< circles.length; i++) {
+        //     drawCircle(circles[i]);
+        // }
+        for(let index in circles) {
+            console.log(circles[index]);
+        }
+
+        // for(let circle of circles) {
+        //     drawCircle(circle);
+        // }
+
+        circles.map(drawCircle);
+        
+
+
+    </script>
+</body>
+</html>
